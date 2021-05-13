@@ -88,10 +88,12 @@ const ProdetAdmin = ({navigation}) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.btn1}>
+          <TouchableOpacity style={styles.btn1}
+          >
             <Text style={{fontWeight: 'bold', marginTop: 10}}>Cancel</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn2}>
+          <TouchableOpacity style={styles.btn2}
+           onPress={() => navigation.goBack()}>
             <Text
               style={{
                 color: Colors.backgroundcolor,

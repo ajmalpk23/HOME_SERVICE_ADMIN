@@ -48,7 +48,7 @@ const Servicepricing = ({navigation}) => {
         <View style={styles.categorycontainer}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('CleaningAdmin')}>
+           onPress={()  => navigation.navigate('CleaningAdmin')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/Images/Cleaning.jpg')}

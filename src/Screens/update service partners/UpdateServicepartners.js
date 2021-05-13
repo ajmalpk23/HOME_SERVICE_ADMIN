@@ -7,6 +7,7 @@ import {
   View,
   ScrollView,
   Alert,
+  Modal
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -47,7 +48,7 @@ const Servicepartners = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={()  => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/Images/Cleaning.jpg')}

@@ -13,7 +13,10 @@ import ApplianceAdmin from '../Screens/update service pricing/ApplianceAdmin'
 import PlumbingAdmin from '../Screens/update service pricing/PlumbingAdmin'
 import InteriorAdmin from '../Screens/update service pricing/InteriorAdmin'
 import ElectricalAdmin from '../Screens/update service pricing/ElectricalAdmin'
-
+import Order from '../Screens/view order details/Order'
+import Orderdetails from '../Screens/view order details/Orderdetails'
+import Sanitizationservices from '../Screens/Sanitizationservices'
+import Servicepartners from '../Screens/servicepartners';
 const HomeNav = createStackNavigator();
 export default Homenavigation = () => {
   return (
@@ -28,7 +31,10 @@ export default Homenavigation = () => {
       <HomeNav.Screen name='PlumbingAdmin' component={PlumbingAdmin} />
       <HomeNav.Screen name='InteriorAdmin' component={InteriorAdmin} />
       <HomeNav.Screen name='ElectricalAdmin' component={ElectricalAdmin} />
-
+      <HomeNav.Screen name='Sanitizationservices' component={Sanitizationservices}/> 
+      <HomeNav.Screen name='Servicepartners' component={Servicepartners}/> 
+      <HomeNav.Screen name='Order' component ={Order}/>
+      <HomeNav.Screen name='Orderdetails' component={Orderdetails}/>
     </HomeNav.Navigator>
   );
 };

@@ -11,7 +11,7 @@ import {
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../config/colors';
 
-const ElectricalAdmin = () => {
+const ElectricalAdmin = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       

@@ -68,13 +68,22 @@ export default Home = ({navigation}) => {
             Update Service Partners
           </Text>
         </TouchableOpacity>
-        <View
+        <TouchableOpacity
+         onPress={() => navigation.navigate('Order')}
+          style={{
+            backgroundColor: Colors.continercolor,
+            height: 100,
+            borderRadius: 15,
+            flexDirection: 'row',
+            top:40
+          }}>
+        {/* <View
           style={{
             backgroundColor: Colors.continercolor,
             height: 100,
             borderRadius: 15,
             flexDirection: 'row',top:40
-          }}>
+          }}> */}
           <Image
             source={require('../Assets/vod.png')}
             style={{height: 60, width: 40, top: 20, left: 25}}></Image>
@@ -86,9 +95,10 @@ export default Home = ({navigation}) => {
               top: 40,
               left: 45,
             }}>
-           View Order Deails
+           View Order Details
           </Text>
-        </View>
+          </TouchableOpacity>
+        {/* </View> */}
         <TouchableOpacity
          onPress={() => navigation.navigate('Feedback')}
           style={{
