@@ -14,80 +14,113 @@ import Colors from '../../config/colors';
 const ElectricalAdmin = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      
-        <View style={styles.header}>
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={{bottom: 5, left: 20}}
+          onPress={() => navigation.goBack()}>
+          <AntDesign
+            style={styles.iconItem}
+            name="left"
+            size={20}
+            color={Colors.backgroundcolor}
+          />
+        </TouchableOpacity>
+        <View style={{width: 148, height: 47, paddingLeft: 90}}>
+          <Image
+            style={{
+              flex: 1,
+              width: 48,
+              height: 10,
+              bottom: 32,
+              left: 5,
+              tintColor: '#fff',
+            }}
+            source={require('../../Assets/Images/Home.png')}
+          />
+        </View>
+        <Text style={styles.text}>HOME SERVE</Text>
+
+        <Text style={styles.headingStyle}>Electrical Work</Text>
+      </View>
+      <ScrollView>
+        <View style={styles.categorycontainer}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
-            onPress={() => navigation.goBack()}>
-            <AntDesign
-              style={styles.iconItem}
-              name="left"
-              size={20}
-              color={Colors.backgroundcolor}
-            />
-          </TouchableOpacity>
-          <View style={{width: 148, height: 47, paddingLeft: 90}}>
-            <Image
-              style={{
-                flex: 1,
-                width: 48,
-                height: 10,
-                bottom: 32,
-                left: 5,
-                tintColor: '#fff',
-              }}
-              source={require('../../Assets/Images/Home.png')}
-            />
-          </View>
-          <Text style={styles.text}>HOME SERVE</Text>
-
-          <Text style={styles.headingStyle}>Electrical Work</Text>
-        </View>
-        <ScrollView>
-
-        <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Switch & Socket'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/switch.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/switch.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Fan'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/fan.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/fan.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'light'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/light.png')} style={styles.img}  />
+              <Image
+                source={require('../../Assets/adm/light.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Wiring'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/wiring.png')} style={styles.img}  />
+              <Image
+                source={require('../../Assets/adm/wiring.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer2}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Inverter & Stabilizer'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/inverter.png')} style={styles.img}  />
+              <Image
+                source={require('../../Assets/adm/inverter.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Room Heater'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/heater.png')} style={styles.img}  />
+              <Image
+                source={require('../../Assets/adm/heater.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer1}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'MCB & Fuse'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/fuse.png')} style={styles.img}  />
+              <Image
+                source={require('../../Assets/adm/fuse.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -97,17 +130,17 @@ const ElectricalAdmin = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        height: 160,
-        flexDirection: 'row',
-        paddingTop: 1,
-        alignItems: 'center',
-        elevation: 1,
-        borderBottomEndRadius: 12,
-        borderBottomStartRadius: 12,
-        backgroundColor: Colors.primarycolor,
-      },
+  header: {
+    width: '100%',
+    height: 160,
+    flexDirection: 'row',
+    paddingTop: 1,
+    alignItems: 'center',
+    elevation: 1,
+    borderBottomEndRadius: 12,
+    borderBottomStartRadius: 12,
+    backgroundColor: Colors.primarycolor,
+  },
   categorycontainer1: {
     flex: 1,
     justifyContent: 'center',
@@ -149,24 +182,24 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
   },
-//   headingStyle: {
-//     marginTop: 10,
-//     marginBottom: 10,
-//     fontSize: 16,
-//     fontWeight: '900',
-//     textAlign: 'center',
-//     alignItems: 'center',
-//     fontWeight: 'bold',
-//     color: Colors.text,
-//   },
+  //   headingStyle: {
+  //     marginTop: 10,
+  //     marginBottom: 10,
+  //     fontSize: 16,
+  //     fontWeight: '900',
+  //     textAlign: 'center',
+  //     alignItems: 'center',
+  //     fontWeight: 'bold',
+  //     color: Colors.text,
+  //   },
 
-//   text: {
-//     fontSize: 20,
-//     fontWeight: '900',
-//     fontWeight: 'bold',
-//     color: Colors.text,
-//     paddingLeft: 10,
-//   },
+  //   text: {
+  //     fontSize: 20,
+  //     fontWeight: '900',
+  //     fontWeight: 'bold',
+  //     color: Colors.text,
+  //     paddingLeft: 10,
+  //   },
 
   appbarcontainer: {
     width: 360,

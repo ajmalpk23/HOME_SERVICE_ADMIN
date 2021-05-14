@@ -7,12 +7,11 @@ import {
   View,
   ScrollView,
   Alert,
-  Modal
+  Modal,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../../config/colors';
-
 
 const Servicepartners = ({navigation}) => {
   return (
@@ -48,7 +47,13 @@ const Servicepartners = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={()  => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {
+                head: 'Cleaning & Sanitization',
+              })
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/Images/Cleaning.jpg')}
@@ -56,7 +61,13 @@ const Servicepartners = ({navigation}) => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.categorybtn1} onPress={()  => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn1}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {
+                head: 'AC Service & Repair ',
+              })
+            }>
             <View style={styles.categoryicon1}>
               <Image
                 source={require('../../Assets/Images/AC.jpg')}
@@ -67,7 +78,11 @@ const Servicepartners = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer2}>
-          <TouchableOpacity style={styles.categorybtn2} onPress={() => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn2}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {head: 'Appliance Repair'})
+            }>
             <View style={styles.categoryicon2}>
               <Image
                 source={require('../../Assets/Images/Appliance.jpg')}
@@ -75,7 +90,11 @@ const Servicepartners = ({navigation}) => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.categorybtn3} onPress={() => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn3}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {head: 'Plumbing Work'})
+            }>
             <View style={styles.categoryicon3}>
               <Image
                 source={require('../../Assets/Images/Plumbing.jpg')}
@@ -86,7 +105,13 @@ const Servicepartners = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer3}>
-          <TouchableOpacity style={styles.categorybtn4} onPress={() => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn4}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {
+                head: 'Interior Designing',
+              })
+            }>
             <View style={styles.categoryicon4}>
               <Image
                 source={require('../../Assets/Images/Designing.jpg')}
@@ -94,7 +119,11 @@ const Servicepartners = ({navigation}) => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.categorybtn5} onPress={() => navigation.navigate('Servicepartners')}>
+          <TouchableOpacity
+            style={styles.categorybtn5}
+            onPress={() =>
+              navigation.navigate('Servicepartners', {head: 'Electrical Work'})
+            }>
             <View style={styles.categoryicon5}>
               <Image
                 source={require('../../Assets/Images/Electrical.jpg')}

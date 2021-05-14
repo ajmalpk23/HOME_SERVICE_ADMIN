@@ -12,10 +12,10 @@ const Stack = createStackNavigator();
 export default HomeSerice = () => {
   return (
     <NavigationContainer>
-      <MyTabs />
+      {/* <MyTabs /> */}
 
 
-      {/* <Login /> */}
+      <Login />
     </NavigationContainer>
   );
 };

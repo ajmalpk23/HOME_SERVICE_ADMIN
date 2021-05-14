@@ -15,7 +15,7 @@ const PlumbingAdmin = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       <ScrollView>
-      <View style={styles.header}>
+        <View style={styles.header}>
           <TouchableOpacity
             style={{bottom: 5, left: 20}}
             onPress={() => navigation.goBack()}>
@@ -45,35 +45,60 @@ const PlumbingAdmin = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Basin & Sink'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/sink.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/sink.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Tap & Mixer'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/tap.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/tap.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Motor'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/motor.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/motor.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Toilet'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/toilet.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/toilet.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer1}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
+          <TouchableOpacity
+            style={styles.categorybtn}
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Bath Fitting'})}>
             <View style={styles.categoryicon}>
-              <Image source={require('../../Assets/adm/bath.png')} style={styles.img} />
+              <Image
+                source={require('../../Assets/adm/bath.png')}
+                style={styles.img}
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -83,17 +108,17 @@ const PlumbingAdmin = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        height: 160,
-        flexDirection: 'row',
-        paddingTop: 1,
-        alignItems: 'center',
-        elevation: 1,
-        borderBottomEndRadius: 12,
-        borderBottomStartRadius: 12,
-        backgroundColor: Colors.primarycolor,
-      },
+  header: {
+    width: '100%',
+    height: 160,
+    flexDirection: 'row',
+    paddingTop: 1,
+    alignItems: 'center',
+    elevation: 1,
+    borderBottomEndRadius: 12,
+    borderBottomStartRadius: 12,
+    backgroundColor: Colors.primarycolor,
+  },
   categorycontainer1: {
     flex: 1,
     justifyContent: 'center',
@@ -123,24 +148,24 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
   },
-//   headingStyle: {
-//     marginTop: 10,
-//     marginBottom: 10,
-//     fontSize: 16,
-//     fontWeight: '900',
-//     textAlign: 'center',
-//     alignItems: 'center',
-//     fontWeight: 'bold',
-//     color: Colors.text,
-//   },
+  //   headingStyle: {
+  //     marginTop: 10,
+  //     marginBottom: 10,
+  //     fontSize: 16,
+  //     fontWeight: '900',
+  //     textAlign: 'center',
+  //     alignItems: 'center',
+  //     fontWeight: 'bold',
+  //     color: Colors.text,
+  //   },
 
-//   text: {
-//     fontSize: 20,
-//     fontWeight: '900',
-//     fontWeight: 'bold',
-//     color: Colors.text,
-//     paddingLeft: 10,
-//   },
+  //   text: {
+  //     fontSize: 20,
+  //     fontWeight: '900',
+  //     fontWeight: 'bold',
+  //     color: Colors.text,
+  //     paddingLeft: 10,
+  //   },
 
   appbarcontainer: {
     width: 360,
