@@ -41,11 +41,11 @@ const CleaningAdmin = ({navigation}) => {
           </View>
           <Text style={styles.text}>HOME SERVE</Text>
 
-          <Text style={styles.headingStyle}>Update Service Partners</Text>
+          <Text style={styles.headingStyle}>Cleaning and sanitization Services</Text>
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/sanitize.png')}
@@ -54,7 +54,7 @@ const CleaningAdmin = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/deep.png')}
@@ -64,7 +64,7 @@ const CleaningAdmin = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/bathroomc.png')}
@@ -73,7 +73,7 @@ const CleaningAdmin = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/kitchenc.png')}
@@ -83,7 +83,7 @@ const CleaningAdmin = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/basic.png')}
@@ -92,7 +92,7 @@ const CleaningAdmin = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/sofa.png')}

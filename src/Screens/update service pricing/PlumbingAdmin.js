@@ -45,33 +45,33 @@ const PlumbingAdmin = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/sink.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/tap.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/motor.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/toilet.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer1}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/bath.png')} style={styles.img} />
             </View>

@@ -26,7 +26,8 @@ const Sanitizationservices =(navigation)=>{
             {/**header view */}
             <View style={styles.headerstyle}>
                 <View style={{flexDirection:'row',justifyContent:'space-between',paddingTop:30}}>
-                    <TouchableOpacity style={{paddingLeft:20}}>
+                    <TouchableOpacity style={{paddingLeft:20}}
+                    onPress={() => navigation.goBack()}>
                         <AntDesign name="left" size={20} color='white' >
                             
                             
@@ -90,8 +91,8 @@ const Sanitizationservices =(navigation)=>{
 
                               <TouchableOpacity>
                                 <View style={{width:180,height:40,backgroundColor:colors.secondaryText,borderRadius:12,top:15,padding:10,left:30}}>
-                                  <TouchableOpacity> 
-                                      {/**  onPress={()=> navigation.goBack(null)}*/}
+                                  <TouchableOpacity
+                                       onPress={()=> navigation.goBack()}>
                                   
                                       <Text style={{color:colors.backgroundcolor,fontSize:15,fontWeight:'bold',paddingLeft:55}}>UPDATE</Text>
                                   </TouchableOpacity>

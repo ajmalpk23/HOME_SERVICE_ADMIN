@@ -46,7 +46,7 @@ const ACserviceAdmin = ({navigation}) => {
         </View>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/acser.png')}
@@ -55,7 +55,7 @@ const ACserviceAdmin = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/acrep.png')}
@@ -65,7 +65,7 @@ const ACserviceAdmin = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer1}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/acgas.png')}
@@ -74,7 +74,8 @@ const ACserviceAdmin = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} 
+          onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/acinstall.png')}

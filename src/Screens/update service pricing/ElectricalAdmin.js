@@ -46,46 +46,46 @@ const ElectricalAdmin = ({navigation}) => {
         <ScrollView>
 
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/switch.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/fan.png')} style={styles.img} />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/light.png')} style={styles.img}  />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/wiring.png')} style={styles.img}  />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer2}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/inverter.png')} style={styles.img}  />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/heater.png')} style={styles.img}  />
             </View>
           </TouchableOpacity>
         </View>
         <View style={styles.categorycontainer1}>
-          <TouchableOpacity style={styles.categorybtn} onPress={() => {}}>
+          <TouchableOpacity style={styles.categorybtn} onPress={() => navigation.navigate('Sanitizationservices')}>
             <View style={styles.categoryicon}>
               <Image source={require('../../Assets/adm/fuse.png')} style={styles.img}  />
             </View>

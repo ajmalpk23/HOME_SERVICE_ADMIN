@@ -46,7 +46,7 @@ const ProfileAdmin = ({navigation}) => {
       </View>
 
       <View style={styles.appbarcontainer}>
-        <Text style={styles.headingStyle}>Feedbacks</Text>
+        <Text style={styles.headingStyle}>Profile</Text>
       </View>
       <TouchableOpacity style={styles.profileContainer}
        onPress={() => navigation.navigate('ProfileDetails')}

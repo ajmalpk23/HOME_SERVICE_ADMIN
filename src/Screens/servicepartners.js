@@ -52,7 +52,7 @@ const Servicepartners =()=>{
             <View style={styles.rect1}>
                 <View style={{flexDirection:'row',padding:20}}>
                     <Text style={{fontSize:17,color:colors.secondaryText,fontWeight:'bold'}}>Service Partners List</Text>
-                    <TouchableOpacity style={{paddingLeft:110}} onPress={() => {setModalVisible(true);}}>
+                    <TouchableOpacity style={{paddingLeft:110}} onPress={() => {setModalVisible(false);}}>
                         <AntDesign name="edit" size={20} color={colors.secondaryText}/>
                     </TouchableOpacity>
 
@@ -63,7 +63,7 @@ const Servicepartners =()=>{
                         style={{ margin:10,}}
                         animationIn={'fadeIn'}
                         animationOut={'fadeOut'}
-                        onBackdropPress={() => setModalVisible(false)}>
+                        onBackdropPress={() => setModalVisible(true)}>
     
                         <View style={styles.centeredView1}>
                         <View style={styles.modalView1}>
@@ -72,7 +72,7 @@ const Servicepartners =()=>{
                             <Text style={{fontSize:17,color:colors.secondaryText,fontWeight:'bold',paddingLeft:60,bottom:4}}>Update Partners List</Text>
                               { name.map((item) =>{
                                 return(
-                                    <View style={{borderBottomWidth:1.2,flexDirection:"row",padding:11,borderBottomColor:Colors.rectangle}} key={item.key}>
+                                    <View style={{borderBottomWidth:1.2,flexDirection:"row",padding:11,borderBottomColor:colors.continercolor}} key={item.key}>
                                        <Text style={{color:colors.secondaryText,fontWeight:"bold"}}>{item.list}</Text>
                                        {/**<Text style={{paddingLeft:160,color:Colors.secondaryText}}>{item.value}</Text> */} 
                                        <View style={{left:99}}>
@@ -87,7 +87,7 @@ const Servicepartners =()=>{
                               })}
 
                               <TouchableOpacity>
-                                <View style={{width:180,height:40,backgroundColor:Colors.secondaryText,borderRadius:12,top:15,padding:10,left:30}}>
+                                <View style={{width:180,height:40,backgroundColor:colors.secondaryText,borderRadius:12,top:15,padding:10,left:30}}>
                                   <TouchableOpacity> 
                                       {/**  onPress={()=> navigation.goBack(null)}*/}
                                   
