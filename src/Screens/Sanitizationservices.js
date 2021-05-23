@@ -7,16 +7,17 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Button,
+  Button,ToastAndroid
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../config/colors';
 import {Card} from 'react-native-paper';
 import Modal from 'react-native-modal';
+// import FlashMessage from 'react-native-flash-message';
+// import {showMessage, hideMessage} from 'react-native-flash-message';
 
-const Sanitizationservices = ({route,navigation}) => {
-
-    const {head} =route.params;
+const Sanitizationservices = ({route, navigation}) => {
+  const {head} = route.params;
 
   const [price, setPrice] = useState([
     {bhk: '1RK  ', value: '   RS 300/-', key: '1'},
@@ -30,8 +31,13 @@ const Sanitizationservices = ({route,navigation}) => {
 
   //   const [modalVisible, setModalVisible] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
+  const [alertModalVisible, setalertModalVisible] = useState(false);
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
+  };
+
+  const alerttoggleModal = () => {
+    setalertModalVisible(!alertModalVisible);
   };
 
   return (
@@ -84,21 +90,18 @@ const Sanitizationservices = ({route,navigation}) => {
             // onPress={() => {
             //   setModalVisible(true);
             // }}
-            onPress={()=>toggleModal()}
-            >
+            onPress={() => toggleModal()}>
             <AntDesign name="edit" size={20} color={Colors.secondaryText} />
           </TouchableOpacity>
 
           {/*modal */}
           <Modal
-              isVisible={isModalVisible}
-              hasBackdrop={true}
-              backdropOpacity={0}
-              style={{backgroundColor:'rgba(52, 52, 52, alpha)'}}
+            isVisible={isModalVisible}
+            hasBackdrop={true}
+            backdropOpacity={0}
+            style={{backgroundColor: 'rgba(52, 52, 52, alpha)'}}
             //   onBackdropPress={()=>{toggleModal()}}
-            
-          
-              >
+          >
             <View style={styles.centeredView1}>
               <View style={styles.modalView1}>
                 <View style={{width: 290, padding: 11, left: 1}}>
@@ -126,56 +129,198 @@ const Sanitizationservices = ({route,navigation}) => {
                           style={{
                             color: Colors.secondaryText,
                             fontWeight: 'bold',
+                            top: 12,
                           }}>
                           {item.bhk}
                         </Text>
-                        
+
                         <View style={{left: 99}}>
                           <Card style={styles.cardStyle}>
-                            <Text
+                            <TextInput
                               style={{
-                                fontSize: 13,
+                                fontSize: 11,
                                 fontWeight: 'bold',
-                                top: 5,
+                                //top: 1,
                                 color: Colors.secondaryText,
-                              }}>
-                              {item.value}
-                            </Text>
+                              }}
+                              keyboardType="numeric"
+                              placeholder={item.value}></TextInput>
                           </Card>
                         </View>
                       </View>
                     );
                   })}
 
-                  <TouchableOpacity>
-                    <View
-                      style={{
-                        width: 180,
-                        height: 40,
-                        backgroundColor: Colors.secondaryText,
-                        borderRadius: 12,
-                        top: 15,
-                        padding: 10,
-                        left: 30,
+                  {/*<TouchableOpacity>*/}
+                  <View
+                    style={{
+                      width: 100,
+                      height: 40,
+                      backgroundColor: Colors.secondaryText,
+                      borderRadius: 12,
+                      top: 15,
+                      padding: 10,
+                      //left: 30,
+                    }}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        {
+                          toggleModal();
+                        }
+                        {
+                          setalertModalVisible(true);
+                        }
                       }}>
-                      <TouchableOpacity onPress={()=>{toggleModal()}}>
-                        <Text
-                          style={{
-                            color: Colors.backgroundcolor,
-                            fontSize: 15,
-                            fontWeight: 'bold',
-                            paddingLeft: 55,
-                          }}>
-                          UPDATE
-                        </Text>
-                      </TouchableOpacity>
-                    </View>
-                  </TouchableOpacity>
+                      <Text
+                        style={{
+                          color: Colors.backgroundcolor,
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                          paddingLeft: 15,
+                          alignItems: 'center',
+                        }}>
+                        UPDATE
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                  {/*</TouchableOpacity>*/}
+
+                  {/**<TouchableOpacity> */}
+                  <View
+                    style={{
+                      width: 100,
+                      height: 40,
+                      backgroundColor: Colors.secondaryText,
+                      borderRadius: 12,
+                      bottom: 25,
+                      padding: 10,
+                      left: 140,
+                    }}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        toggleModal();
+                      }}>
+                      <Text
+                        style={{
+                          color: Colors.backgroundcolor,
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                          paddingLeft: 20,
+                        }}>
+                        BACK
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                  {/**</TouchableOpacity> */}
                 </View>
               </View>
             </View>
           </Modal>
         </View>
+
+        {/**modal alert start */}
+        <Modal
+          isVisible={alertModalVisible}
+          hasBackdrop={true}
+          backdropOpacity={0.4}
+          style={{backgroundColor: 'rgba(52, 52, 52, alpha)', padding: 25}}>
+          <View
+            style={{
+              backgroundColor: Colors.backgroundcolor,
+              width: 270,
+              height: 160,
+              borderRadius: 12,
+            }}>
+            <Text
+              style={{
+                color: Colors.secondaryText,
+                fontSize: 20,
+                fontWeight: 'bold',
+                padding: 18,
+              }}>
+              Update
+            </Text>
+            <Text
+              style={{
+                color: Colors.secondaryText,
+                fontSize: 16,
+                paddingLeft: 20,
+              }}>
+              Are you sure you want to update?
+            </Text>
+
+            <View
+              style={{
+                width: 80,
+                height: 40,
+                backgroundColor: Colors.secondaryText,
+                borderRadius: 12,
+                top: 15,
+                padding: 10,
+                left: 35,
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  {
+                    alerttoggleModal();
+                  }
+                  // {
+                  //   showMessage({
+                  //     message: 'Price Updated',
+                  //     // description:"update",
+                  //     // type:"update",
+                  //     color: 'black',
+                  //     backgroundColor: Colors.continercolor,
+                  //   });
+                  // }
+                  {
+                    ToastAndroid.show('Price Updated ', 2000);
+                  }
+                }}
+                style={{width: 50}}>
+                <Text
+                  style={{
+                    color: Colors.backgroundcolor,
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    paddingLeft: 15,
+                    alignItems: 'center',
+                  }}>
+                  YES
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View
+              style={{
+                width: 80,
+                height: 40,
+                backgroundColor: Colors.secondaryText,
+                borderRadius: 12,
+                bottom: 25,
+                padding: 10,
+                left: 150,
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  alerttoggleModal();
+                }}>
+                <Text
+                  style={{
+                    color: Colors.backgroundcolor,
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    paddingLeft: 18,
+                    alignItems: 'center',
+                  }}>
+                  NO
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+        {/**modal alert ends */}
 
         <View style={{width: 290, padding: 10, left: 25}}>
           {price.map(item => {
@@ -199,6 +344,19 @@ const Sanitizationservices = ({route,navigation}) => {
       </View>
 
       {/*view for inner ends */}
+      <View
+        style={{
+          color: Colors.continercolor,
+          flex: 1,
+          width: 140,
+          top: 30,
+          padding: 10,
+          left: 110,
+          alignItems: 'center',
+          borderRadius: 18,
+        }}>
+        {/* <FlashMessage position="bottom" width={25} /> */}
+      </View>
     </View>
     /**main view starts */
   );
@@ -232,23 +390,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 130,
+    bottom: 60,
     left: 1,
     width: '100%',
-    borderRadius:15
+    borderRadius: 15,
   },
   modalView1: {
     backgroundColor: Colors.backgroundcolor,
     borderRadius: 15,
     alignItems: 'center',
-    paddingBottom: 15,
+    // paddingBottom: ,
 
     paddingLeft: 10,
   },
 
   cardStyle: {
-    width: 80,
-    height: 30,
+    width: 100,
+    height: 35,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -279,7 +437,7 @@ const styles = StyleSheet.create({
     marginTop: 95,
     marginBottom: 10,
     fontSize: 15,
-    alignSelf:'center',
+    alignSelf: 'center',
     fontWeight: '900',
     textAlign: 'center',
     alignItems: 'center',

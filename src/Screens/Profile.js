@@ -7,11 +7,14 @@ import {
   View,
   ScrollView,
   Switch,
+  ToastAndroid
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../config/colors';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 import colors from '../config/colors';
 
 const ProfileAdmin = ({navigation}) => {
@@ -52,27 +55,26 @@ const ProfileAdmin = ({navigation}) => {
        onPress={() => navigation.navigate('ProfileDetails')}
       >
         <View style={{flexDirection: 'row', margin: 15}}>
-          <Image source={require('../Assets/profile.png')} />
+        <FontAwesome name='user-circle' color='rgba(95, 95, 130, 1)' size={65} 
+          style={{justifyContent:'center',}} /> 
           <View style={styles.profileNameView}>
             <Text style={styles.profileName}>John Smith</Text>
             <Text style={styles.profileNumber}>+91 98765 54321</Text>
             <Text style={styles.profileEmail}>jsmith@example.com</Text>
           </View>
-          <TouchableOpacity onPress={() => {}}>
             <Ionicons
-              style={{marginLeft: 50, marginTop: 20}}
+              style={{right: -60, marginTop: 23}}
               name="chevron-forward-sharp"
               size={20}
               color="#5F5F82"
             />
-          </TouchableOpacity>
         </View>
       </TouchableOpacity>
       <View style={styles.notifyContainer}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
-          <MaterialIcons
-            style={{marginLeft: 15}}
-            name="notifications-none"
+          <Feather
+            style={{marginLeft: 20}}
+            name="bell"
             size={30}
             color="#5F5F82"
           />
@@ -87,7 +89,21 @@ const ProfileAdmin = ({navigation}) => {
           />
         </View>
       </View>
+      <View style={styles.logoutContainer}>
+      <TouchableOpacity style={{flexDirection: 'row', marginTop: 15}}
+      onPress={() =>{ 
+        navigation.navigate('LoginScreen');
+        ToastAndroid.show('Logout',2000)
+        }}>
+      <AntDesign
+            style={{marginLeft: 20}}
+            name="logout"
+            size={25}
+            color="#5F5F82"
+          />
       <Text style={styles.logout}>Logout</Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -103,12 +119,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primarycolor,
   },
   logout: {
-    marginTop: 15,
+    color: '#5F5F82',
+    fontWeight: '900',
     fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#EB5757',
-    textDecorationLine: 'underline',
+    lineHeight: 16.8,
+    marginLeft: 20,
+    marginTop: 10,
   },
   headingStyle: {
     marginTop: 10,
@@ -169,7 +185,7 @@ const styles = StyleSheet.create({
   },
 
   appbarcontainer: {
-    width: 360,
+    width: 395,
     height: 50,
     backgroundColor: Colors.primarycolor,
     borderBottomEndRadius: 17,
@@ -184,23 +200,34 @@ const styles = StyleSheet.create({
 
   profileContainer: {
     marginTop: 10,
-    width: 334,
+    width: '90%',
     height: 100,
-    left: 12,
+    left: '5%',
+    right:'3%',
     borderRadius: 8,
     backgroundColor:colors.continercolor,
   },
   notifyContainer: {
     marginTop: 10,
-    width: 334,
+    width: '90%',
     height: 70,
-    left: 12,
+    left: '5%',
+    right:'3%',
+    borderRadius: 8,
+    backgroundColor:colors.continercolor,
+  },
+  logoutContainer: {
+    marginTop: 10,
+    width: '90%',
+    height: 70,
+    left: '5%',
+    right:'3%',
     borderRadius: 8,
     backgroundColor:colors.continercolor,
   },
   notifyName: {
     color: '#5F5F82',
-    fontWeight: 'normal',
+    fontWeight: '900',
     fontSize: 17,
     lineHeight: 16.8,
     marginLeft: 20,

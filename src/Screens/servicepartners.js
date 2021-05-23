@@ -8,30 +8,37 @@ import {
   Image,
   TextInput,
   Button,
+  ToastAndroid,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import colors from '../config/colors';
 import {Card} from 'react-native-paper';
 import Modal from 'react-native-modal';
+// import FlashMessage from 'react-native-flash-message'
+// import {showMessage,hideMessage} from 'react-native-flash-message';
 
-const Servicepartners = ({route,navigation}) => {
-    const {head} =route.params;
-
+const Servicepartners = ({route, navigation}) => {
+  const {head} = route.params;
 
   const [isModalVisible, setModalVisible] = useState(false);
+  const [alertModalVisible, setalertModalVisible] = useState(false);
 
   const [name, setName] = useState([
-    {list: 'Nishant', value: '   8889998877', key: '1'},
-    {list: 'Vikram', value: '   8889998877', key: '2'},
-    {list: 'Karthik', value: '   8889998877', key: '3'},
-    {list: 'Sneha', value: '    8889998877', key: '4'},
-    {list: 'Vijay', value: '      8889998877', key: '5'},
-    {list: 'Pooja', value: '     8889998877', key: '6'},
-    {list: 'Sundhar', value: '8889998877', key: '7'},
+    {list: 'Nishant', value: ' 8889998877', key: '1'},
+    {list: 'Vikram ', value: ' 8889998877', key: '2'},
+    {list: 'Kishor  ', value: ' 8889998877', key: '3'},
+    {list: 'Amaya', value: ' 8889998877', key: '4'},
+    {list: 'Daniel  ', value: ' 8889998877', key: '5'},
+    {list: 'Pranav', value: ' 8889998877', key: '6'},
+    {list: 'Nandhu', value: '8889998877', key: '7'},
   ]);
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
+  };
+
+  const alerttoggleModal = () => {
+    setalertModalVisible(!alertModalVisible);
   };
 
   return (
@@ -104,7 +111,7 @@ const Servicepartners = ({route,navigation}) => {
                       color: colors.secondaryText,
                       fontWeight: 'bold',
                       paddingLeft: 60,
-                      bottom: 4,
+                      //bottom: ,
                     }}>
                     Update Partners List
                   </Text>
@@ -114,62 +121,97 @@ const Servicepartners = ({route,navigation}) => {
                         style={{
                           borderBottomWidth: 1.2,
                           flexDirection: 'row',
-                          padding: 11,
+                          //padding: 2,
+
                           borderBottomColor: colors.continercolor,
                         }}
                         key={item.key}>
-                        <Text
-                          style={{
-                            color: colors.secondaryText,
-                            fontWeight: 'bold',
-                          }}>
-                          {item.list}
-                        </Text>
+                        <View style={{width: 65}}>
+                          <TextInput
+                            style={{
+                              color: colors.secondaryText,
+                              fontWeight: 'bold',
+                              //right:8,
+                            }}
+                            placeholder={item.list}></TextInput>
+                        </View>
 
-                        <View style={{left: 99}}>
-                          <Text
+                        <View style={{left: 100}}>
+                          <TextInput
                             style={{
                               fontSize: 13,
                               fontWeight: 'bold',
                               top: 5,
                               color: colors.secondaryText,
-                            }}>
-                            {item.value}
-                          </Text>
+                            }}
+                            keyboardType="numeric"
+                            placeholder={item.value}></TextInput>
                         </View>
                       </View>
                     );
                   })}
 
-                  <TouchableOpacity
-                    onPress={() => {
-                      toggleModal();
+                  {/*<TouchableOpacity>*/}
+                  <View
+                    style={{
+                      width: 100,
+                      height: 40,
+                      backgroundColor: colors.secondaryText,
+                      borderRadius: 12,
+                      top: 15,
+                      padding: 10,
+                      //left: 30,
                     }}>
-                    <View
-                      style={{
-                        width: 180,
-                        height: 40,
-                        backgroundColor: colors.secondaryText,
-                        borderRadius: 12,
-                        top: 15,
-                        padding: 10,
-                        left: 30,
+                    <TouchableOpacity
+                      onPress={() => {
+                        {
+                          toggleModal();
+                        }
+                        {
+                          setalertModalVisible(true);
+                        }
                       }}>
-                      <TouchableOpacity onPress={() => {
-                      toggleModal();
+                      <Text
+                        style={{
+                          color: colors.backgroundcolor,
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                          paddingLeft: 15,
+                          alignItems: 'center',
+                        }}>
+                        UPDATE
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                  {/*</TouchableOpacity>*/}
+
+                  {/**<TouchableOpacity> */}
+                  <View
+                    style={{
+                      width: 100,
+                      height: 40,
+                      backgroundColor: colors.secondaryText,
+                      borderRadius: 12,
+                      bottom: 25,
+                      padding: 10,
+                      left: 140,
                     }}>
-                        <Text
-                          style={{
-                            color: colors.backgroundcolor,
-                            fontSize: 15,
-                            fontWeight: 'bold',
-                            paddingLeft: 55,
-                          }}>
-                          UPDATE
-                        </Text>
-                      </TouchableOpacity>
-                    </View>
-                  </TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={() => {
+                        toggleModal();
+                      }}>
+                      <Text
+                        style={{
+                          color: colors.backgroundcolor,
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                          paddingLeft: 20,
+                        }}>
+                        BACK
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                  {/**</TouchableOpacity> */}
                 </View>
               </View>
             </View>
@@ -177,6 +219,110 @@ const Servicepartners = ({route,navigation}) => {
 
           {/*modal */}
         </View>
+
+        {/**modal alert start */}
+        <Modal
+          isVisible={alertModalVisible}
+          hasBackdrop={true}
+          backdropOpacity={0.4}
+          style={{backgroundColor: 'rgba(52, 52, 52, alpha)', padding: 25}}>
+          <View
+            style={{
+              backgroundColor: colors.backgroundcolor,
+              width: 270,
+              height: 160,
+              borderRadius: 12,
+            }}>
+            <Text
+              style={{
+                color: colors.secondaryText,
+                fontSize: 20,
+                fontWeight: 'bold',
+                padding: 18,
+              }}>
+              Update
+            </Text>
+            <Text
+              style={{
+                color: colors.secondaryText,
+                fontSize: 16,
+                paddingLeft: 20,
+              }}>
+              Are you sure you want to update?
+            </Text>
+
+            <View
+              style={{
+                width: 80,
+                height: 40,
+                backgroundColor: colors.secondaryText,
+                borderRadius: 12,
+                top: 15,
+                padding: 10,
+                left: 35,
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  {
+                    alerttoggleModal();
+                  }
+                  {
+                    ToastAndroid.show('Partners List Updated ', 2000);
+                  }
+                  // {
+                  //   showMessage({
+                  //     message: 'Partners List Updated',
+                  //     // description:"update",
+                  //     // type:"update",
+                  //     color: 'black',
+                  //     backgroundColor: colors.continercolor,
+                  //   });
+                  // }
+                }}
+                style={{width: 50}}>
+                <Text
+                  style={{
+                    color: colors.backgroundcolor,
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    paddingLeft: 15,
+                    alignItems: 'center',
+                  }}>
+                  YES
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View
+              style={{
+                width: 80,
+                height: 40,
+                backgroundColor: colors.secondaryText,
+                borderRadius: 12,
+                bottom: 25,
+                padding: 10,
+                left: 150,
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  alerttoggleModal();
+                }}>
+                <Text
+                  style={{
+                    color: colors.backgroundcolor,
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    paddingLeft: 18,
+                    alignItems: 'center',
+                  }}>
+                  NO
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+        {/**modal alert ends */}
 
         <View style={{width: 290, padding: 10, left: 25}}>
           {name.map(item => {
@@ -200,6 +346,20 @@ const Servicepartners = ({route,navigation}) => {
       </View>
 
       {/*view for inner ends */}
+
+      <View
+        style={{
+          color: colors.continercolor,
+          flex: 1,
+          width: 180,
+          top: 30,
+          padding: 7,
+          left: 90,
+          alignItems: 'center',
+          borderRadius: 18,
+        }}>
+        {/* <FlashMessage position="bottom" width={25} /> */}
+      </View>
     </View>
     /**main view starts */
   );
@@ -208,17 +368,17 @@ const Servicepartners = ({route,navigation}) => {
 export default Servicepartners;
 
 const styles = StyleSheet.create({
-    header: {
-        width: '100%',
-        height: 160,
-        flexDirection: 'row',
-        paddingTop: 1,
-        alignItems: 'center',
-        elevation: 1,
-        borderBottomEndRadius: 12,
-        borderBottomStartRadius: 12,
-        backgroundColor: colors.primarycolor,
-      },
+  header: {
+    width: '100%',
+    height: 160,
+    flexDirection: 'row',
+    paddingTop: 1,
+    alignItems: 'center',
+    elevation: 1,
+    borderBottomEndRadius: 12,
+    borderBottomStartRadius: 12,
+    backgroundColor: colors.primarycolor,
+  },
   rect1: {
     width: '94%',
     height: 400,
@@ -233,7 +393,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 90,
+    bottom: 80,
     left: 1,
     width: '100%',
     top: 100,
@@ -243,7 +403,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: 'center',
     paddingBottom: 15,
-    paddingTop: 20,
+    // paddingTop: 10,
 
     paddingLeft: 10,
   },

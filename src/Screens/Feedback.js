@@ -15,7 +15,7 @@ import colors from '../config/colors';
 
 const Feedback = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
+    <View style={{flex: 1, backgroundColor: Colors.continercolor}}>
       <View style={styles.header}>
         <TouchableOpacity
           style={{bottom: 5, left: 20}}
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
 
   appbarcontainer: {
-    width: 360,
+    width: 390,
     height: 50,
     backgroundColor: Colors.primarycolor,
     borderBottomEndRadius: 17,
@@ -229,11 +229,11 @@ const styles = StyleSheet.create({
   },
   feedbackContainer: {
     marginTop: 10,
-    width: 334,
+    
     height: 141,
-    left: 12,
+    left: '4%',
     borderRadius: 8,
-    backgroundColor: Colors.continercolor,
+    backgroundColor: Colors.backgroundcolor,width:'92%',right:'4%'
   },
 
   textInput: {

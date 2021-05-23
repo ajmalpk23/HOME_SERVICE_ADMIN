@@ -93,17 +93,17 @@ const Order = () => {
       
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20, top: 10}}
+            style={{ left: 20, top: '5%'}}
             onPress={() => navigation.goBack()}>
             <AntDesign
-              style={{top: 10}}
+              style={{bottom: '10%'}}
               name="left"
               size={20}
               color={colors.backgroundcolor}
             />
           </TouchableOpacity>
 
-          <View style={{width: 148, height: 47, paddingLeft: 90, top: 10}}>
+          <View style={{width: 148, height: 47, paddingLeft: 85, top: 10}}>
             <Image
               style={{width: 45, height: 45, tintColor: '#fff'}}
               source={require('../../Assets/appbar.png')}
@@ -122,14 +122,14 @@ const Order = () => {
           <Text
             style={{
               alignSelf: 'center',
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: '700',
               color: colors.backgroundcolor,
             }}>
             Order Details
           </Text>
         </View>
-        <ScrollView style={{height: 700}}>
+        <ScrollView style={{width: '92%', left: '4%', right: '4%', top: 5,flex:1,}}>
         <View style={styles.container}>
           {text.map(item => {
             return (
@@ -138,12 +138,12 @@ const Order = () => {
                 <Text style={{color: colors.secondaryText, top: 10, left: 10}}>
                   {item.value}
                 </Text>
-                <Text style={{color: colors.secondaryText, top: 10, left: 10}}>
+                <Text style={{color: colors.secondaryText, top: 10, left: 10}}> 
                   {item.name}
                 </Text>
                 <TouchableOpacity
                   onPress={() => navigation.navigate('Orderdetails')}
-                  style={{top: 5, left: 290, top: 10}}>
+                  style={{ left: 300, bottom: '8%',justifyContent:'flex-end'}}>
                   <AntDesign
                     style={styles.iconItem}
                     name="right"
@@ -175,19 +175,19 @@ const styles = StyleSheet.create({
 
     fontWeight: '700',
     color: colors.backgroundcolor,
-    paddingLeft: -3,
+    right:'15%',
     top: 5,
   },
 
   container1: {
     backgroundColor: colors.continercolor,
-    width: 340,
+   // width: 335,
     paddingTop: 10,
     height: 100,
-    borderRadius: 9,
+    borderRadius: 10,
     // top:5,
-    left: 10,
-
+    //left: 19,
+     justifyContent:'flex-start',
     flexDirection: 'column',
 
     marginTop: StatusBar.currentHeight || 0,

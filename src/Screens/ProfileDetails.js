@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   Image,
@@ -7,48 +7,211 @@ import {
   View,
   ScrollView,
   Alert,
+  ImageBackground,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../config/colors';
 import {Rating} from 'react-native-ratings';
 import {TextInput} from 'react-native';
+import Modal from 'react-native-modal';
+import ImagePicker from 'react-native-image-crop-picker';
+import Animated from 'react-native-reanimated';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+// import RNModal from 'react-native-modal';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
 const ProdetAdmin = ({navigation}) => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  const [image, setImage] = useState(
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvts5aHBstDkR8PigS4RmZkbZy78zpZoSuOw&usqp=CAU',
+  );
+
+  const takePhotoFromCamera = () => {
+    ImagePicker.openCamera({
+      compressImageMaxWidth: 300,
+      compressImageMaxHeight: 300,
+      cropping: true,
+      compressImageQuality: 0.7,
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      bs.current.snapTo(0);
+    });
+  };
+
+  const choosePhotoFromLibrary = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 300,
+      cropping: true,
+      compressImageQuality: 0.7,
+    }).then(image => {
+      console.log(image);
+      setImage(image.path);
+      bs.current.snapTo(0);
+    });
+  };
+
+  const renderInner = () => (
+    <View style={styles.panel}>
+      <View style={{alignItems: 'center'}}>
+        <Text style={styles.panelTitle}>Upload Photo</Text>
+        <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
+      </View>
+      <TouchableOpacity
+        style={styles.panelButton}
+        onPress={takePhotoFromCamera}>
+        <Text style={styles.panelButtonTitle}>Take Photo</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.panelButton}
+        onPress={choosePhotoFromLibrary}>
+        <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.panelButton}
+        onPress={() => bs.current.snapTo(0)}>
+        <Text style={styles.panelButtonTitle}>Cancel</Text>
+      </TouchableOpacity>
+    </View>
+  );
+  const renderHeader = () => (
+    <View style={styles.bottomHeader}>
+      <View style={styles.panelHeader}>
+        <View style={styles.panelHandle} />
+      </View>
+    </View>
+  );
+
+  bs = React.createRef();
+  // fall = new Animated.Value(1);
+
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       <ScrollView>
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={{bottom: 5, left: 20}}
-          onPress={() => navigation.goBack()}>
-          <AntDesign
-            style={styles.iconItem}
-            name="left"
-            size={20}
-            color={Colors.backgroundcolor}
-          />
-        </TouchableOpacity>
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={{bottom: 5, left: 20}}
+            onPress={() => navigation.goBack()}>
+            <AntDesign
+              style={styles.iconItem}
+              name="left"
+              size={20}
+              color={Colors.backgroundcolor}
+            />
+          </TouchableOpacity>
 
-        <View style={{width: 148, height: 70, paddingLeft: 80}}>
-          <Image
-            style={{
-              width: 45,
-              height: 45,
-              tintColor: '#fff',
-              top: 10,
-              alignSelf: 'center',
-            }}
-            source={require('../Assets/appbar.png')}
-          />
+          <View style={{width: 148, height: 70, paddingLeft: 80}}>
+            <Image
+              style={{
+                width: 45,
+                height: 45,
+                tintColor: '#fff',
+                top: 10,
+                alignSelf: 'center',
+              }}
+              source={require('../Assets/appbar.png')}
+            />
+          </View>
+          <Text style={styles.text}>Home Serve</Text>
         </View>
-        <Text style={styles.text}>Home Serve</Text>
-      </View>
 
-      <View style={styles.appbarcontainer}>
-        <Text style={styles.headingStyle}>Profile Details</Text>
-      </View>
+        <View style={styles.appbarcontainer}>
+          <Text style={styles.headingStyle}>Profile Details</Text>
+        </View>
+       
         <View style={styles.container}>
-          <Image source={require('../Assets/profile.png')} />
+        <View style={styles.containerDP}>
+         
+          <TouchableOpacity
+            style={styles.button2}
+            onPress={() => {
+              toggleModal();
+            }}>
+            <View
+              style={{
+                height: 100,
+                width: 100,
+                borderRadius: 15,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <ImageBackground
+                source={{
+                  uri: image,
+                }}
+                style={{height: 100, width: 100}}
+                imageStyle={{borderRadius: 15}}>
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <FontAwesome
+                    name="camera"
+                    size={35}
+                    color="#fff"
+                    style={{
+                      opacity: 0.7,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderWidth: 1,
+                      borderColor: '#fff',
+                      borderRadius: 10,
+                    }}
+                  />
+                </View>
+              </ImageBackground>
+            </View>
+            {/* modal */}
+            <Modal
+              isVisible={isModalVisible}
+              hasBackdrop={true}
+              backdropOpacity={0}
+              style={{backgroundColor: 'rgba(52, 52, 52, alpha)',margin:0,padding:0}}
+              onBackdropPress={() => {
+                toggleModal();
+              }}>
+              <View style={{bottom: -240,margin:0,padding:0}}>
+                <View style={styles.panel}>
+                  <View style={{alignItems: 'center'}}>
+                    <Text style={styles.panelTitle}>Upload Photo</Text>
+                    <Text style={styles.panelSubtitle}>
+                      Choose Your Profile Picture
+                    </Text>
+                  </View>
+                  <TouchableOpacity
+                    style={styles.panelButton}
+                    onPress={takePhotoFromCamera}>
+                    <Text style={styles.panelButtonTitle}>Take Photo</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.panelButton}
+                    onPress={choosePhotoFromLibrary}>
+                    <Text style={styles.panelButtonTitle}>
+                      Choose From Library
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.panelButton}
+                    onPress={() => {
+                      // bs.current.snapTo(0);
+                      toggleModal();
+                    }}>
+                    <Text style={styles.panelButtonTitle}>Cancel</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </Modal>
+            {/* modal end */}
+          </TouchableOpacity>
+        </View>
+         
         </View>
         <View style={styles.labelContainer}>
           <View>
@@ -88,12 +251,12 @@ const ProdetAdmin = ({navigation}) => {
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.btn1}
-          >
+          <TouchableOpacity style={styles.btn1}>
             <Text style={{fontWeight: 'bold', marginTop: 10}}>Cancel</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn2}
-           onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            style={styles.btn2}
+            onPress={() => navigation.goBack()}>
             <Text
               style={{
                 color: Colors.backgroundcolor,
@@ -206,6 +369,55 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 1,
+  },
+  bottomHeader: {
+    backgroundColor: '#ffffff',
+    shadowColor: '#333333',
+    shadowOffset: {width: -2, height: -3},
+    shadowRadius: 2,
+    shadowOpacity: 0.4,
+    paddingTop: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    bottom: 30,
+  },
+  panelHeader: {
+    alignItems: 'center',
+  },
+  panelHandle: {
+    width: 40,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: Colors.continercolor,
+    // marginBottom: 10,
+  },
+  panelTitle: {
+    fontSize: 27,
+    height: 35,
+  },
+  panel: {
+    padding: 20,
+    backgroundColor: '#ffffff',
+    paddingTop: 20,
+    margin: 0,
+  },
+  panelButton: {
+    padding: 13,
+    borderRadius: 10,
+    backgroundColor: Colors.primarycolor,
+    alignItems: 'center',
+    marginVertical: 7,
+  },
+  panelButtonTitle: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  panelSubtitle: {
+    fontSize: 14,
+    color: 'gray',
+    height: 30,
+    marginBottom: 10,
   },
 });
 export default ProdetAdmin;
