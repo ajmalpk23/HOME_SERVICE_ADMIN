@@ -18,7 +18,7 @@ const ACserviceAdmin = ({navigation}) => {
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top: 10, left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}

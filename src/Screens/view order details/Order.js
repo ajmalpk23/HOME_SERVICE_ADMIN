@@ -93,7 +93,7 @@ const Order = () => {
       
         <View style={styles.header}>
           <TouchableOpacity
-            style={{ left: 20, top: '5%'}}
+            style={{ left: 20, top: 10}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={{bottom: '10%'}}

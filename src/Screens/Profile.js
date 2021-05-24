@@ -73,7 +73,7 @@ const ProfileAdmin = ({navigation}) => {
       <View style={styles.notifyContainer}>
         <View style={{flexDirection: 'row', marginTop: 15}}>
           <Feather
-            style={{marginLeft: 20}}
+            style={{left: 20}}
             name="bell"
             size={30}
             color="#5F5F82"
@@ -96,7 +96,7 @@ const ProfileAdmin = ({navigation}) => {
         ToastAndroid.show('Logout',2000)
         }}>
       <AntDesign
-            style={{marginLeft: 20}}
+            style={{left: 20,top:5}}
             name="logout"
             size={25}
             color="#5F5F82"
@@ -123,17 +123,19 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontSize: 18,
     lineHeight: 16.8,
-    marginLeft: 20,
+    left: 30,
     marginTop: 10,
   },
   headingStyle: {
     marginTop: 10,
     marginBottom: 10,
+    right:20,
     fontSize: 16,
     fontWeight: '900',
     textAlign: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
+    alignSelf:'center',
     color: Colors.backgroundcolor,
   },
   profileText: {
@@ -181,7 +183,8 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    paddingLeft: 10,
+    right: '10%',
+    alignSelf:'center'
   },
 
   appbarcontainer: {
@@ -230,7 +233,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontSize: 17,
     lineHeight: 16.8,
-    marginLeft: 20,
+    left: 25,
     marginTop: 10,
   },
   textInput: {

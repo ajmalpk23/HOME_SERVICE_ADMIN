@@ -17,7 +17,7 @@ const CleaningAdmin = ({navigation}) => {
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top: 10, left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -141,9 +141,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    left: -150,
-    paddingLeft: -40,
-    paddingRight: 10,
+    right: '120%',
+   // paddingLeft: -40,
+    //paddingRight: 10,
   },
 
   categorycontainer: {

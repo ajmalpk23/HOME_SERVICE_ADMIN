@@ -18,7 +18,7 @@ const Servicepricing = ({navigation}) => {
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top: 10, left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -27,7 +27,7 @@ const Servicepricing = ({navigation}) => {
               color={Colors.backgroundcolor}
             />
           </TouchableOpacity>
-          <View style={{width: 148, height: 47, paddingLeft: 90}}>
+          <View style={{width: 148, height: 47, left: 85}}>
             <Image
               style={{
                 flex: 1,
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    paddingLeft: -7,
+    right: 7,
     bottom: 30,
   },
 

@@ -47,7 +47,7 @@ const Servicepartners = ({route, navigation}) => {
       {/**header view */}
       <View style={styles.header}>
         <TouchableOpacity
-          style={{bottom: 5, left: 20}}
+          style={{top: 10, left: 20}}
           onPress={() => navigation.goBack()}>
           <AntDesign
             style={styles.iconItem}
@@ -430,12 +430,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 15,
     fontWeight: '900',
+    alignSelf:'center',
     textAlign: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
     color: colors.backgroundcolor,
-    left: -150,
-    paddingLeft: -40,
-    paddingRight: 10,
+    right: 150,
+    width:170,
+   // paddingLeft: -40,
+   // paddingRight: 10,
   },
 });

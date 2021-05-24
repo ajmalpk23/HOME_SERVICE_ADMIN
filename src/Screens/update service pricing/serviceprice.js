@@ -24,7 +24,7 @@ const Sanitizationservices =({navigation})=>{
             {/**header view */}
             <View style={styles.headerstyle}>
                 <View style={{flexDirection:'row',justifyContent:'space-between',paddingTop:30}}>
-                    <TouchableOpacity style={{paddingLeft:20}}>
+                    <TouchableOpacity style={{left:20}}>
                         <AntDesign name="left" size={20} color='white' >
                             
                             
@@ -42,7 +42,7 @@ const Sanitizationservices =({navigation})=>{
                     </View>
                 </View>
 
-                <Text style={{alignItems:'center',color:'white',fontWeight:'bold',fontSize:16,paddingLeft:100,bottom:1}}>Home Sanitization Services</Text>
+                <Text style={{alignItems:'center',color:'white',fontWeight:'bold',fontSize:16,right:10,bottom:1}}>Home Sanitization Services</Text>
 
 
             </View>

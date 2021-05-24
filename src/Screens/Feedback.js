@@ -171,7 +171,9 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textAlign: 'center',
     alignItems: 'center',
+    alignSelf:'center',
     fontWeight: 'bold',
+    right:'5%',
     color: Colors.backgroundcolor,
   },
   feedbackText: {
@@ -204,6 +206,7 @@ const styles = StyleSheet.create({
     color: Colors.backgroundcolor,
     alignSelf: 'center',
     bottom: 5,
+    right:10
   },
 
   appbarcontainer: {

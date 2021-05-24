@@ -17,7 +17,7 @@ const PlumbingAdmin = ({navigation}) => {
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top: 10, left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -224,10 +224,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
+    alignSelf:'center',
     color: Colors.backgroundcolor,
-    left: -150,
-    paddingLeft: -40,
-    paddingRight: 10,
+    right: '85%',
+   // paddingLeft: -40,
+    //paddingRight: 10,
   },
 });
 export default PlumbingAdmin;

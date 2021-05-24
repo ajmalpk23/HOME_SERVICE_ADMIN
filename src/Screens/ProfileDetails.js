@@ -8,6 +8,7 @@ import {
   ScrollView,
   Alert,
   ImageBackground,
+  ToastAndroid,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../config/colors';
@@ -89,7 +90,8 @@ const ProdetAdmin = ({navigation}) => {
 
   bs = React.createRef();
   // fall = new Animated.Value(1);
-
+  const[passLength,setPasslength] =useState(0);
+  const [mobno, setMobileno] = useState('')
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       <ScrollView>
@@ -218,45 +220,71 @@ const ProdetAdmin = ({navigation}) => {
             <Text style={styles.labelText}>Name</Text>
             <TextInput
               style={styles.txtInput}
-              placeholder={'John Smith'}
-              placeholderTextColor="#dcdcdc"></TextInput>
+              placeholder={'Enter fullname'}
+              placeholderTextColor="#dcdcdc"
+              textContentType='name'
+              autoCompleteType='name'
+              returnKeyType='next'></TextInput>
           </View>
           <View>
             <Text style={styles.labelText}>Mobile Number</Text>
             <TextInput
               style={styles.txtInput}
-              placeholder={'9876554321'}
-              placeholderTextColor="#dcdcdc"></TextInput>
+              placeholder={'Enter Mobile Number'}
+              placeholderTextColor="#dcdcdc"
+              textContentTyp='telephoneNumber'
+              keyboardType='phone-pad'
+              autoCapitalize='none'
+              onChangeText={(num)=>setMobileno(num)}
+              autoCorrect={false }></TextInput>
           </View>
           <View>
             <Text style={styles.labelText}>Email ID</Text>
             <TextInput
               style={styles.txtInput}
-              placeholder={'jsmith@example.com'}
-              placeholderTextColor="#dcdcdc"></TextInput>
+              placeholder={'Enter your Email-ID'}
+              placeholderTextColor="#dcdcdc"
+              textContentType='emailAddress'
+              keyboardType='email-address'
+              autoCapitalize='none'
+              returnKeyType='next'></TextInput>
           </View>
           <View>
             <Text style={styles.labelText}>Password</Text>
             <TextInput
               style={styles.txtInput}
-              placeholder={'**********'}
-              placeholderTextColor="#dcdcdc"></TextInput>
+              placeholder={'Enter your Password'}
+              placeholderTextColor="#dcdcdc"
+              textContentType='password'
+              autoCapitalize='none'
+              onChangeText={(text)=>{setPasslength(text.length);}}
+              secureTextEntry={true}
+              returnKeyType='next'></TextInput>
           </View>
           <View>
             <Text style={styles.labelText}>Confirm Password</Text>
             <TextInput
               style={styles.txtInput}
-              placeholder={'**********'}
-              placeholderTextColor="#dcdcdc"></TextInput>
+              placeholder={'Re-enter your Password'}
+              placeholderTextColor="#dcdcdc"
+              textContentType='password'
+              autoCapitalize='none'
+              onChangeText={(text)=>{setPasslength(text.length);}}
+              secureTextEntry={true}
+              returnKeyType='done'></TextInput>
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.btn1}>
+          <TouchableOpacity style={styles.btn1}
+          onPress={() => {
+            ToastAndroid.show('Cancelled',2000)
+          }}>
             <Text style={{fontWeight: 'bold', marginTop: 10}}>Cancel</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.btn2}
-            onPress={() => navigation.goBack()}>
+            onPress={() => {navigation.goBack()
+              ToastAndroid.show('Updated',2000)}}>
             <Text
               style={{
                 color: Colors.backgroundcolor,
@@ -285,6 +313,7 @@ const styles = StyleSheet.create({
   headingStyle: {
     marginTop: 10,
     marginBottom: 10,
+    left:10,
     fontSize: 16,
     fontWeight: '900',
     textAlign: 'center',
@@ -298,7 +327,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    paddingLeft: 10,
+    right: 10,
   },
   labelContainer: {
     flexDirection: 'column',

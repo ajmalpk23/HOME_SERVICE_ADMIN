@@ -17,7 +17,7 @@ const ApplianceAdmin = ({navigation}) => {
       <ScrollView>
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top: 10, left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -223,11 +223,12 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textAlign: 'center',
     alignItems: 'center',
+    alignSelf:'center',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    left: -150,
-    paddingLeft: -40,
-    paddingRight: 10,
+    right: '90%',
+   // paddingLeft: -40,
+   // paddingRight: 10,
   },
 });
 export default ApplianceAdmin;
