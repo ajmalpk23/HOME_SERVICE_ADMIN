@@ -399,21 +399,22 @@ left:'15%',
   },
    cardView3: {
      marginTop: 17,
-     width: 338,
+     width: "92%",
      height: 105,
-     left: 12,
+     left: "4%",
      bottom: '6%',
      borderRadius: 10,
      backgroundColor: '#F5F5F5',
+     right:'4%'
    },
   cardView4: {
   marginTop: 17,
-     width: 338,
+     width: '92%',
      height: 98,
-     left: 12,
+     left: "4%",
      bottom: '6%',
      borderRadius: 10,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F5F5F5',right:'4%'
    },
   cardStyle: {
     marginTop: 5,

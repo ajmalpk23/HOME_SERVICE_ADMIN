@@ -331,6 +331,10 @@ const styles = StyleSheet.create({
     paddingLeft: -5,
     left: -15,
     bottom: 10,
+  }, img: {
+    height: '220%',
+    width: '15%',
+    tintColor: Colors.backgroundcolor,
   },
 });
 export default Servicepricing;
