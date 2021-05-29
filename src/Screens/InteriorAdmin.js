@@ -11,45 +11,46 @@ import {
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../config/colors';
 
-const ElectricalAdmin = ({navigation}) => {
+const InteriorAdmin = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={{bottom:5, left: 20}}
-          onPress={() => navigation.goBack()}>
-          <AntDesign
-            style={styles.iconItem}
-            name="left"
-            size={20}
-            color={Colors.backgroundcolor}
-          />
-        </TouchableOpacity>
-        <View style={{width: 148, height: 47, paddingLeft: 90}}>
-          <Image
-            style={{
-              flex: 1,
-              width: 48,
-              height: 10,
-              bottom: 32,
-              left: 5,
-              tintColor: '#fff',
-            }}
-            source={require('../../Assets/Images/Home.png')}
-          />
-        </View>
-        <Text style={styles.text}>HOME SERVE</Text>
-
-        <Text style={styles.headingStyle}>Electrical Work</Text>
-      </View>
       <ScrollView>
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={{bottom: 5, left: 20}}
+            onPress={() => navigation.goBack()}>
+            <AntDesign
+              style={styles.iconItem}
+              name="left"
+              size={20}
+              color={Colors.backgroundcolor}
+            />
+          </TouchableOpacity>
+          <View style={{width: 148, height: 47, paddingLeft: 90}}>
+            <Image
+              style={{
+                flex: 1,
+                width: 48,
+                height: 10,
+                bottom: 32,
+                left: 5,
+                tintColor: '#fff',
+              }}
+              source={require('../../Assets/Images/Home.png')}
+            />
+          </View>
+          <Text style={styles.text}>HOME SERVE</Text>
+
+          <Text style={styles.headingStyle}>Interior Designing</Text>
+        </View>
+
         <View style={styles.categorycontainer}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Switch & Socket'})}>
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Complete House'})}>
             <View style={styles.categoryicon}>
               <Image
-                source={require('../../Assets/adm/switch.png')}
+                source={require('../../Assets/adm/house.png')}
                 style={styles.img}
               />
             </View>
@@ -57,10 +58,10 @@ const ElectricalAdmin = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Fan'})}>
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Kitchen'})}>
             <View style={styles.categoryicon}>
               <Image
-                source={require('../../Assets/adm/fan.png')}
+                source={require('../../Assets/adm/kitchen.png')}
                 style={styles.img}
               />
             </View>
@@ -69,10 +70,10 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'light'})}>
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Wardrobe'})}>
             <View style={styles.categoryicon}>
               <Image
-                source={require('../../Assets/adm/light.png')}
+                source={require('../../Assets/adm/wardrobe.png')}
                 style={styles.img}
               />
             </View>
@@ -80,33 +81,10 @@ const ElectricalAdmin = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Wiring'})}>
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Painting & Wallpaper'})}>
             <View style={styles.categoryicon}>
               <Image
-                source={require('../../Assets/adm/wiring.png')}
-                style={styles.img}
-              />
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.categorycontainer2}>
-          <TouchableOpacity
-            style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Inverter & Stabilizer'})}>
-            <View style={styles.categoryicon}>
-              <Image
-                source={require('../../Assets/adm/inverter.png')}
-                style={styles.img}
-              />
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Room Heater'})}>
-            <View style={styles.categoryicon}>
-              <Image
-                source={require('../../Assets/adm/heater.png')}
+                source={require('../../Assets/adm/painting.png')}
                 style={styles.img}
               />
             </View>
@@ -115,10 +93,10 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer1}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'MCB & Fuse'})}>
+            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Furnishing & Decor'})}>
             <View style={styles.categoryicon}>
               <Image
-                source={require('../../Assets/adm/fuse.png')}
+                source={require('../../Assets/adm/decor.png')}
                 style={styles.img}
               />
             </View>
@@ -146,18 +124,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
     marginRight: 10,
-    marginLeft: 5,
-    marginTop: 30,
-  },
-
-  categorycontainer2: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    marginRight: 10,
-    marginLeft: 10,
+    marginLeft: '6.5%',
     marginTop: 30,
   },
 
@@ -166,7 +133,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-
     marginRight: 10,
     marginLeft: 10,
     marginTop: 30,
@@ -258,11 +224,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
-    alignSelf:'center',
     color: Colors.backgroundcolor,
-    right: '85%',
-   // paddingLeft: -40,
-    //paddingRight: 10,
+    left: '-75%',
+    paddingLeft: -40,
+    paddingRight: 10,
   },
 });
-export default ElectricalAdmin;
+export default InteriorAdmin;

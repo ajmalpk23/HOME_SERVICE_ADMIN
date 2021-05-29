@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import colors from '../../config/colors';
+import Colors from '../../config/colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 const Order = () => {
@@ -89,47 +90,42 @@ const Order = () => {
   ]);
 
   return (
-    <View style={{backgroundColor: colors.backgroundcolor, height: '100%'}}>
+    <View style={{backgroundColor: colors.backgroundcolor, height: '100%',flex:1}}>
       
         <View style={styles.header}>
           <TouchableOpacity
-            style={{ left: 20, top: 10}}
+            style={{ left: 20, top:'55%'}}
             onPress={() => navigation.goBack()}>
             <AntDesign
-              style={{bottom: '10%'}}
+              style={styles.iconItem}
               name="left"
               size={20}
               color={colors.backgroundcolor}
             />
           </TouchableOpacity>
 
-          <View style={{width: 148, height: 47, paddingLeft: 85, top: 10}}>
+          <View style={styles.headerView}>
             <Image
-              style={{width: 45, height: 45, tintColor: '#fff'}}
+              style={styles.img}
               source={require('../../Assets/appbar.png')}
             />
-          </View>
-          <Text style={styles.text}>HOME SERVE</Text>
+          
+          <Text style={styles.txt}>HOME SERVE</Text>
         </View>
-        <View
+         {/* <View
           style={{
             backgroundColor: colors.primarycolor,
             height: 45,
             borderBottomLeftRadius: 15,
             borderBottomEndRadius: 15,
             zIndex: 1,
-          }}>
+          }}>  */}
           <Text
-            style={{
-              alignSelf: 'center',
-              fontSize: 16,
-              fontWeight: '700',
-              color: colors.backgroundcolor,
-            }}>
+            style={styles.txt2}>
             Order Details
           </Text>
         </View>
-        <ScrollView style={{width: '92%', left: '4%', right: '4%', top: 5,flex:1,}}>
+        <ScrollView>
         <View style={styles.container}>
           {text.map(item => {
             return (
@@ -162,31 +158,54 @@ const Order = () => {
 export default Order;
 const styles = StyleSheet.create({
   header: {
+    backgroundColor: Colors.primarycolor,
     width: '100%',
-    height: 90,
+    height:'23%',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  headerView: {
     flexDirection: 'row',
-    paddingTop: 1,
-    alignItems: 'center',
-    elevation: 0,
-    backgroundColor: colors.primarycolor,
+    top: '1%',
+    alignSelf: 'center',
   },
-  text: {
+  img: {
+    height: '220%',
+    width: '15%',
+    tintColor: Colors.backgroundcolor,
+  },
+  txt: {
+    color: Colors.backgroundcolor,
+    fontWeight: 'bold',
     fontSize: 17,
-
-    fontWeight: '700',
-    color: colors.backgroundcolor,
-    right:'15%',
-    top: 5,
+    top: 12,
+    left: 4,
   },
+  txt2: {
+    color: Colors.backgroundcolor,
+    fontWeight: '700',
+    fontSize: 15,
+    alignSelf: 'center',
+    top: '27%',
+  },
+  // text: {
+  //   fontSize: 17,
+
+  //   fontWeight: '700',
+  //   color: colors.backgroundcolor,
+  //   right:'15%',
+  //   top: 5,
+  // },
 
   container1: {
     backgroundColor: colors.continercolor,
-   // width: 335,
-    paddingTop: 10,
+    width:'92%',
+    bottom: '1%',
     height: 100,
     borderRadius: 10,
     // top:5,
-    //left: 19,
+    left: '4%',
+    right:'4%',
      justifyContent:'flex-start',
     flexDirection: 'column',
 

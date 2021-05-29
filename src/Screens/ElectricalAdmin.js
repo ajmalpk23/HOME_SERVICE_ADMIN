@@ -11,7 +11,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../../config/colors';
 
-const CleaningAdmin = ({navigation}) => {
+const ElectricalAdmin = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor,height:'100%'}}>
      
@@ -32,10 +32,10 @@ const CleaningAdmin = ({navigation}) => {
             style={styles.img}></Image>
           <Text style={styles.txt}> HOME SERVE</Text>
         </View>
-        <Text style={styles.txt2}>Cleaning and sanitization Services</Text>
+        <Text style={styles.txt2}>Electrical Work</Text>
       </View>
           
-        {/* <ScrollView styles={{height:900}}> */}
+         <ScrollView> 
          <View styles={{height:'100%'}}>
          
         
@@ -44,20 +44,20 @@ const CleaningAdmin = ({navigation}) => {
             <TouchableOpacity
               style={styles.continer}
               onPress={() => {
-                navigation.navigate('Sanitizationservices', {head: 'Home Sanitization'});
+                navigation.navigate('Sanitizationservices', {head: 'Switch & Socket'});
               }}>
               <Image
-                source={require('../../Assets/adm/sanitize.png')}
+                source={require('../../Assets/adm/switch.png')}
                 style={{}}
               />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.continer}
               onPress={() => {
-                navigation.navigate('Sanitizationservices', {head: 'Full House Deep Cleaning'}); }}
+                navigation.navigate('Sanitizationservices', {head: 'Fan'}); }}
                 >
               <Image
-                source={require('../../Assets/adm/deep.png')}
+                source={require('../../Assets/adm/fan.png')}
                 style={{}}
               />
             </TouchableOpacity>
@@ -71,20 +71,20 @@ const CleaningAdmin = ({navigation}) => {
               <TouchableOpacity
                 style={styles.continer}
                 onPress={() => {
-                  navigation.navigate('Sanitizationservices', {head: 'Bathroom Cleaning'});
+                  navigation.navigate('Sanitizationservices', {head: 'light'});
                 }}>
                 <Image
-                  source={require('../../Assets/adm/bathroomc.png')}
+                  source={require('../../Assets/adm/light.png')}
                   style={{}}
                 />
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.continer}
                 onPress={() => {
-                  navigation.navigate('Sanitizationservices', {head: 'Kitchen Cleaning'});
+                  navigation.navigate('Sanitizationservices', {head: 'Wiring'});
                 }}>
                 <Image
-                  source={require('../../Assets/adm/kitchenc.png')}
+                  source={require('../../Assets/adm/wiring.png')}
                   style={{}}
                 />
               </TouchableOpacity>
@@ -99,29 +99,51 @@ const CleaningAdmin = ({navigation}) => {
               <TouchableOpacity
                 style={styles.continer}
                 onPress={() => {
-                  navigation.navigate('Sanitizationservices', {head: 'Full House Basic Cleaning'});
+                  navigation.navigate('Sanitizationservices', {head: 'Inverter & Stabilizer'});
                 }}>
                 <Image
-                  source={require('../../Assets/adm/basic.png')}
+                  source={require('../../Assets/adm/inverter.png')}
                   style={{}}
                 />
               </TouchableOpacity>
+                <TouchableOpacity
+                style={styles.continer}
+                  onPress={() => {
+                  navigation.navigate('Sanitizationservices', {head: 'Room Heater'});
+                }}>
+                <Image
+                  source={require('../../Assets/adm/heater.png')}
+                  style={{}}
+                />
+              </TouchableOpacity> 
+              </View> 
+              </View>
+
+              {/*fourth row*/}
+
+              <View style={{top:'40%'}}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-around'}}>
               <TouchableOpacity
                 style={styles.continer}
                 onPress={() => {
-                  navigation.navigate('Sanitizationservices', {head: 'Sofa Cleaning'});
+                  navigation.navigate('Sanitizationservices', {head: 'MCB & Fuse'});
                 }}>
                 <Image
-                  source={require('../../Assets/adm/sofa.png')}
+                  source={require('../../Assets/adm/fuse.png')}
                   style={{}}
                 />
               </TouchableOpacity>
-              </View>
+                <TouchableOpacity
+                style={styles.continer}>
+                 
+              </TouchableOpacity> 
+              </View> 
               </View>
               {/* </View> */}
           
         </View>
-        {/* </ScrollView> */}
+         </ScrollView> 
     </View>
   );
 };
@@ -173,7 +195,25 @@ const styles = StyleSheet.create({
     bottom: 10,
    },
 });
-export default CleaningAdmin;
+export default ElectricalAdmin;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

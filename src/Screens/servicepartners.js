@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import colors from '../config/colors';
+import Colors from '../config/colors';
 import {Card} from 'react-native-paper';
 import Modal from 'react-native-modal';
 // import FlashMessage from 'react-native-flash-message'
@@ -42,39 +43,59 @@ const Servicepartners = ({route, navigation}) => {
   };
 
   return (
-    /**main view starts */
-    <View>
-      {/**header view */}
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={{top: 10, left: 20}}
-          onPress={() => navigation.goBack()}>
-          <AntDesign
-            style={styles.iconItem}
-            name="left"
-            size={20}
-            color={colors.backgroundcolor}
-          />
-        </TouchableOpacity>
-        <View style={{width: 148, height: 47, paddingLeft: 90}}>
-          <Image
-            style={{
-              flex: 1,
-              width: 48,
-              height: 10,
-              bottom: 32,
-              left: 5,
-              tintColor: '#fff',
-            }}
-            source={require('../Assets/Images/Home.png')}
-          />
-        </View>
-        <Text style={styles.text}>HOME SERVE</Text>
+    // /**main view starts */
+    // <View>
+    //   {/**header view */}
+    //   <View style={styles.header}>
+    //     <TouchableOpacity
+    //       style={{bottom:5, left: 20}}
+    //       onPress={() => navigation.goBack()}>
+    //       <AntDesign
+    //         style={styles.iconItem}
+    //         name="left"
+    //         size={20}
+    //         color={colors.backgroundcolor}
+    //       />
+    //     </TouchableOpacity>
+    //     <View style={{width: 148, height: 47, paddingLeft: 90}}>
+    //       <Image
+    //         style={{
+    //           flex: 1,
+    //           width: 48,
+    //           height: 10,
+    //           bottom: 32,
+    //           left: 5,
+    //           tintColor: '#fff',
+    //         }}
+    //         source={require('../Assets/Images/Home.png')}
+    //       />
+    //     </View>
+    //     <Text style={styles.text}>HOME SERVE</Text>
 
-        <Text style={styles.headingStyle}>{head} Services</Text>
-      </View>
-      {/*header view ends */}
-
+    //     <Text style={styles.headingStyle}>{head} Services</Text>
+    //   </View>
+    //   {/*header view ends */}
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor,height:'100%'}}>
+     
+    <View style={styles.header}>
+      <TouchableOpacity
+        style={{top:'30%', left: 20}}
+        onPress={() => navigation.goBack()}>
+        <AntDesign
+          style={styles.iconItem}
+          name="left"
+          size={20}
+          color={Colors.backgroundcolor}
+        />
+      </TouchableOpacity>
+      <View style={styles.headerview}>
+      <Image
+        source={require('../Assets/appbar.png')}
+        style={styles.img}></Image>
+      <Text style={styles.txt}> HOME SERVE</Text>
+    </View>
+    <Text style={styles.txt2}>{head} Services</Text>
+  </View>
       {/*view for inner starts */}
       <View style={styles.rect1}>
         <View style={{flexDirection: 'row', padding: 20}}>
@@ -368,16 +389,47 @@ const Servicepartners = ({route, navigation}) => {
 export default Servicepartners;
 
 const styles = StyleSheet.create({
+  // header: {
+  //   width: '100%',
+  //   height: 160,
+  //   flexDirection: 'row',
+  //   paddingTop: 1,
+  //   alignItems: 'center',
+  //   elevation: 1,
+  //   borderBottomEndRadius: 12,
+  //   borderBottomStartRadius: 12,
+  //   backgroundColor: colors.primarycolor,
+  // },
   header: {
+    backgroundColor: Colors.primarycolor,
     width: '100%',
-    height: 160,
+    height:'23%',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  headerview: {
     flexDirection: 'row',
-    paddingTop: 1,
-    alignItems: 'center',
-    elevation: 1,
-    borderBottomEndRadius: 12,
-    borderBottomStartRadius: 12,
-    backgroundColor: colors.primarycolor,
+    bottom: '14%',
+    alignSelf: 'center',
+  },
+  img: {
+    height: '220%',
+    width: '15%',
+    tintColor: Colors.backgroundcolor,
+  },
+  txt: {
+    color: Colors.backgroundcolor,
+    fontWeight: 'bold',
+    fontSize: 17,
+    top: 12,
+    left: 4,
+  },
+  txt2: {
+    color: Colors.backgroundcolor,
+    fontWeight: '700',
+    fontSize: 15,
+    alignSelf: 'center',
+    bottom: '5%',
   },
   rect1: {
     width: '94%',
@@ -407,37 +459,37 @@ const styles = StyleSheet.create({
 
     paddingLeft: 10,
   },
-  img: {
-    width: 120,
-    height: 120,
-  },
+  // img: {
+  //   width: 120,
+  //   height: 120,
+  // },
   iconItem: {
     marginBottom: 50,
     paddingLeft: -5,
     left: -15,
     bottom: 10,
   },
-  text: {
-    fontSize: 15,
-    fontWeight: '900',
-    fontWeight: 'bold',
-    color: colors.backgroundcolor,
-    paddingLeft: -7,
-    bottom: 30,
-  },
-  headingStyle: {
-    marginTop: 95,
-    marginBottom: 10,
-    fontSize: 15,
-    fontWeight: '900',
-    alignSelf:'center',
-    textAlign: 'center',
-    alignItems: 'center',
-    fontWeight: 'bold',
-    color: colors.backgroundcolor,
-    right: 150,
-    width:170,
+  // text: {
+  //   fontSize: 15,
+  //   fontWeight: '900',
+  //   fontWeight: 'bold',
+  //   color: colors.backgroundcolor,
+  //   paddingLeft: -7,
+  //   bottom: 30,
+  // },
+  // headingStyle: {
+  //   marginTop: 95,
+  //   marginBottom: 10,
+  //   fontSize: 15,
+  //   fontWeight: '900',
+  //   alignSelf:'center',
+  //   textAlign: 'center',
+  //   alignItems: 'center',
+  //   fontWeight: 'bold',
+  //   color: colors.backgroundcolor,
+  //   right: 150,
+  //   width:170,
    // paddingLeft: -40,
    // paddingRight: 10,
-  },
+ // },
 });

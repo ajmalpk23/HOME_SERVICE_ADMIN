@@ -24,7 +24,7 @@ const Sanitizationservices =({navigation})=>{
             {/**header view */}
             <View style={styles.headerstyle}>
                 <View style={{flexDirection:'row',justifyContent:'space-between',paddingTop:30}}>
-                    <TouchableOpacity style={{left:20}}>
+                    <TouchableOpacity style={{left:20,bottom:5}}>
                         <AntDesign name="left" size={20} color='white' >
                             
                             

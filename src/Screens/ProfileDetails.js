@@ -9,6 +9,7 @@ import {
   Alert,
   ImageBackground,
   ToastAndroid,
+  StatusBar
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../config/colors';
@@ -93,11 +94,11 @@ const ProdetAdmin = ({navigation}) => {
   const[passLength,setPasslength] =useState(0);
   const [mobno, setMobileno] = useState('')
   return (
-    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
-      <ScrollView>
+    <View style={{flex: 1, backgroundColor: Colors.backgroundcolor,height:'100%'}}>
+      
         <View style={styles.header}>
           <TouchableOpacity
-            style={{bottom: 5, left: 20}}
+            style={{top:'30%', left: 20}}
             onPress={() => navigation.goBack()}>
             <AntDesign
               style={styles.iconItem}
@@ -107,26 +108,21 @@ const ProdetAdmin = ({navigation}) => {
             />
           </TouchableOpacity>
 
-          <View style={{width: 148, height: 70, paddingLeft: 80}}>
+          <View style={styles.headerView}>
             <Image
-              style={{
-                width: 45,
-                height: 45,
-                tintColor: '#fff',
-                top: 10,
-                alignSelf: 'center',
-              }}
+              style={styles.img}
               source={require('../Assets/appbar.png')}
             />
+          
+          <Text style={styles.txt}>Home Serve</Text>
           </View>
-          <Text style={styles.text}>Home Serve</Text>
+          <Text style={styles.txt2}>Profile Details</Text>
         </View>
 
-        <View style={styles.appbarcontainer}>
-          <Text style={styles.headingStyle}>Profile Details</Text>
-        </View>
        
+        <ScrollView>
         <View style={styles.container}>
+          
         <View style={styles.containerDP}>
          
           <TouchableOpacity
@@ -302,33 +298,64 @@ const ProdetAdmin = ({navigation}) => {
 
 const styles = StyleSheet.create({
   header: {
-    width: 414,
-    height: 100,
-    flexDirection: 'row',
-    paddingTop: 1,
-    alignItems: 'center',
-    elevation: 1,
     backgroundColor: Colors.primarycolor,
+    width: '100%',
+    height:'23%',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
   },
-  headingStyle: {
-    marginTop: 10,
-    marginBottom: 10,
-    left:10,
-    fontSize: 16,
-    fontWeight: '900',
-    textAlign: 'center',
-    alignItems: 'center',
-    fontWeight: 'bold',
+  headerView: {
+    flexDirection: 'row',
+    top: '1%',
+    alignSelf: 'center',
+  },
+  img: {
+    height: '220%',
+    width: '15%',
+    tintColor: Colors.backgroundcolor,
+  },
+  txt: {
     color: Colors.backgroundcolor,
+    fontWeight: 'bold',
+    fontSize: 17,
+    top: 12,
+    left: 4,
   },
+  txt2: {
+    color: Colors.backgroundcolor,
+    fontWeight: '700',
+    fontSize: 15,
+    alignSelf: 'center',
+    top: '30%',
+  },
+  // header: {
+  //   width: 414,
+  //   height: 100,
+  //   flexDirection: 'row',
+  //   paddingTop: 1,
+  //   alignItems: 'center',
+  //   elevation: 1,
+  //   backgroundColor: Colors.primarycolor,
+  // },
+  // headingStyle: {
+  //   marginTop: 10,
+  //   marginBottom: 10,
+  //   left:10,
+  //   fontSize: 16,
+  //   fontWeight: '900',
+  //   textAlign: 'center',
+  //   alignItems: 'center',
+  //   fontWeight: 'bold',
+  //   color: Colors.backgroundcolor,
+  // },
 
-  text: {
-    fontSize: 20,
-    fontWeight: '900',
-    fontWeight: 'bold',
-    color: Colors.backgroundcolor,
-    right: 10,
-  },
+  // text: {
+  //   fontSize: 20,
+  //   fontWeight: '900',
+  //   fontWeight: 'bold',
+  //   color: Colors.backgroundcolor,
+  //   right: 10,
+  // },
   labelContainer: {
     flexDirection: 'column',
   },
@@ -337,13 +364,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginRight: 15,
   },
-  appbarcontainer: {
-    width: 360,
-    height: 50,
-    backgroundColor: Colors.primarycolor,
-    borderBottomEndRadius: 17,
-    borderBottomStartRadius: 17,
-  },
+  // appbarcontainer: {
+  //   width: 360,
+  //   height: 50,
+  //   backgroundColor: Colors.primarycolor,
+  //   borderBottomEndRadius: 17,
+  //   borderBottomStartRadius: 17,
+  // },
   labelText: {
     fontWeight: 'bold',
     color: '#5F5F82',
@@ -355,16 +382,20 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginTop: 20,
+   // marginTop: 20,
   },
   txtInput: {
     borderRadius: 8,
     borderColor: '#dcdcdc',
-    margin: 10,
+   // margin: 10,
     borderWidth: 2,
-    width: 340,
+    bottom:'12%',
+    width: '92%',
     height: 40,
+    left:'4%',
+    right:'4%',
     alignItems: 'center',
+    marginTop: StatusBar.currentHeight || 0,
   },
   btn1: {
     borderRadius: 8,
@@ -383,12 +414,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  textInput: {
-    paddingTop: 180,
-    textAlign: 'center',
-    color: Colors.text,
-    fontSize: 20,
-  },
+  // textInput: {
+  //   top: '10%',
+  //   textAlign: 'center',
+  //   color: Colors.text,
+  //   fontSize: 20,
+  // },
   button: {
     backgroundColor: Colors.primarycolor,
     width: '40%',

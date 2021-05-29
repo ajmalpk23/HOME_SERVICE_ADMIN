@@ -130,32 +130,34 @@ const Styles = StyleSheet.create({
   header: {
     backgroundColor: Colors.primarycolor,
     width: '100%',
-    height: 150,
+    height:'23%',
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
   },
   headerview: {
     flexDirection: 'row',
-    top: 50,
+    top: '8%',
     alignSelf: 'center',
+    right:'5%'
   },
   img: {
-    height: 55,
-    width: 55,
+    height: '220%',
+    width: '15%',
     tintColor: Colors.backgroundcolor,
+    
   },
   txt: {
     color: Colors.backgroundcolor,
     fontWeight: 'bold',
     fontSize: 17,
     top: 12,
-    left: 4,
+    //left: 1,
   },
   txt2: {
     color: Colors.backgroundcolor,
     fontWeight: '700',
-    fontSize: 14,
+    fontSize: 15,
     alignSelf: 'center',
-    top: 60,
+    top: 70,
   },
 });

@@ -5,19 +5,18 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
-  ScrollView,
+  
   StatusBar
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import colors from '../../config/colors';
-import Colors from '../../config/colors';
 import {Button, Divider, Card, Title} from 'react-native-paper';
 const Orderdetails = ({navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: colors.backgroundcolor,height:'100%'}}>
+    <View style={{flex: 1, backgroundColor: colors.backgroundcolor}}>
       <View style={styles.header}>
         <TouchableOpacity
-          style={{top:'30%', left: 20}}
+          style={{bottom:5, left: 20}}
           onPress={() => navigation.goBack()}>
           <AntDesign
             style={styles.iconItem}
@@ -26,17 +25,23 @@ const Orderdetails = ({navigation}) => {
             color={colors.backgroundcolor}
           />
         </TouchableOpacity>
-        <View style={styles.headerView}>
+        <View style={{width: 148, height:47, left:'65%'}}>
           <Image
-            style={styles.img}
+            style={{
+              flex: 1,
+              width: 48,
+              height: 10,
+              bottom: '55%',
+              
+              tintColor: '#fff',
+            }}
             source={require('../../Assets/appbar.png')}
           />
-        
-        <Text style={styles.txt}>HOME SERVE</Text>
         </View>
-        <Text style={styles.txt2}>Order Details</Text>
+        <Text style={styles.text}>HOME SERVE</Text>
+        <Text style={styles.headingStyle}>Order Details</Text>
       </View>
-      <ScrollView>
+      
       <View style={styles.cardView}>
         <Card.Content>
           <Text
@@ -245,9 +250,7 @@ const Orderdetails = ({navigation}) => {
             }}
           />
         </Card.Content>
-       </View>
-       
-      
+      </View>
       {/* <View style={styles.iconss}>
         <TouchableOpacity
           style={{bottom: 5, left: 20}}
@@ -293,54 +296,34 @@ const Orderdetails = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </View>
-</ScrollView>
+
     </View>
   );
 };
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: Colors.primarycolor,
     width: '100%',
-    height:'23%',
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-  },
-  headerView: {
+    height: 145,
     flexDirection: 'row',
-    bottom: '13%',
-    alignSelf: 'center',
+    paddingTop: 1,
+    alignItems: 'center',
+    elevation: 1,
+    borderBottomStartRadius: 12,
+    borderBottomEndRadius: 12,
+    backgroundColor: colors.primarycolor,
   },
-  img: {
-    height: '220%',
-    width: '15%',
-    tintColor: Colors.backgroundcolor,
-  },
-  txt: {
-    color: Colors.backgroundcolor,
-    fontWeight: 'bold',
-    fontSize: 17,
-    top: 12,
-    left: 4,
-  },
-  txt2: {
-    color: Colors.backgroundcolor,
-    fontWeight: '700',
+  headingStyle: {
+    marginTop: 95,
+    marginBottom: 10,
     fontSize: 15,
-    alignSelf: 'center',
-    bottom: '8%',
-  },
-  // headingStyle: {
-  //   marginTop: 95,
-  //   marginBottom: 10,
-  //   fontSize: 15,
-  //   fontWeight: '900',
-  //   textAlign: 'center',
-  //   alignItems: 'center',
-  //   fontWeight: 'bold',
-  //   color: colors.backgroundcolor,
-  //   right:'80%',
+    fontWeight: '900',
+    textAlign: 'center',
+    alignItems: 'center',
+    fontWeight: 'bold',
+    color: colors.backgroundcolor,
+    right:'70%',
   
-  // },
+  },
   cardTitle: {
     marginTop: 35,
     color: colors.primarycolor,
@@ -349,15 +332,14 @@ const styles = StyleSheet.create({
     left: 120,
   },
   cardView: {
-   // marginTop: 20,
-    width: '92%',
+   marginTop: 35,
+    width: '93%',
     height: 80,
     left: '4%',
     right:'4%',
    bottom:'3%',
     borderRadius: 10,
     backgroundColor: colors.continercolor,
-    marginTop: StatusBar.currentHeight || 0,
   },
   buttonContainer: {
     bottom: '10%',
@@ -385,8 +367,8 @@ left:'15%',
   left:'90%',top:'8%',
   },
   cardView2: {
-    //marginTop: 17,
-    width: '92%',
+    marginTop: 35,
+    width: '93%',
     height: 100,
     left: '4%',
     right:'4%',
@@ -395,22 +377,21 @@ left:'15%',
     backgroundColor: colors.continercolor,
     justifyContent:'flex-start',
     flexDirection: 'column',
-    marginTop: StatusBar.currentHeight || 0,
   },
    cardView3: {
      marginTop: 17,
-     width: 338,
+     width: '93%',
      height: 105,
-     left: 12,
+     left: '4%',
      bottom: '6%',
      borderRadius: 10,
      backgroundColor: '#F5F5F5',
    },
   cardView4: {
   marginTop: 17,
-     width: 338,
+     width: '93%',
      height: 98,
-     left: 12,
+     left: '4%',
      bottom: '6%',
      borderRadius: 10,
     backgroundColor: '#F5F5F5',

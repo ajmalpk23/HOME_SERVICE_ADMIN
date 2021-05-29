@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     height: 55,
     width: 55,
     alignSelf: 'center',
-    top: 50,
+    top: 40,
   },
   txt: {
     color: Colors.backgroundcolor,
