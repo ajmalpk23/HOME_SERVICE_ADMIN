@@ -16,7 +16,7 @@ const ElectricalAdmin = ({navigation}) => {
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       <View style={styles.header}>
         <TouchableOpacity
-          style={{bottom: 5, left: 20}}
+          style={{top: 10, left: 20}}
           onPress={() => navigation.goBack()}>
           <AntDesign
             style={styles.iconItem}
@@ -31,7 +31,7 @@ const ElectricalAdmin = ({navigation}) => {
               flex: 1,
               width: 48,
               height: 10,
-              bottom: 32,
+              bottom: 30,
               left: 5,
               tintColor: '#fff',
             }}
@@ -40,7 +40,7 @@ const ElectricalAdmin = ({navigation}) => {
         </View>
         <Text style={styles.text}>HOME SERVE</Text>
 
-        <Text style={styles.textt}>Electrical Work</Text>
+        <Text style={styles.headingStyle}>Electrical Work</Text>
       </View>
       <ScrollView>
         <View style={styles.categorycontainer}>
@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
     paddingTop: 1,
     alignItems: 'center',
     elevation: 1,
-    borderBottomEndRadius: 12,
-    borderBottomStartRadius: 12,
+    borderBottomEndRadius: 15,
+    borderBottomStartRadius: 15,
     backgroundColor: Colors.primarycolor,
   },
   categorycontainer1: {
@@ -190,26 +190,26 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   categoryicon: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
   },
   categorybtn: {
     flex: 1,
     marginTop: 15,
-    marginLeft: 22,
+    marginLeft: 20,
     marginRight: 20,
   },
-   //headingStyle: {
-    //   marginTop: 10,
-   //    marginBottom: 10,
-   //    fontSize: 16,
+  //   headingStyle: {
+  //     marginTop: 10,
+  //     marginBottom: 10,
+  //     fontSize: 16,
   //     fontWeight: '900',
-   //    textAlign: 'center',
+  //     textAlign: 'center',
   //     alignItems: 'center',
- //      fontWeight: 'bold',
-//   color: Colors.text,
- //    },
+  //     fontWeight: 'bold',
+  //     color: Colors.text,
+  //   },
 
   //   text: {
   //     fontSize: 20,
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   containers: {
-    flex: 1,
+    flex: 4,
 
     flexDirection: 'column',
   },
@@ -265,22 +265,12 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    right:8,
+    right: 10,
     bottom: 30,
   },
-  textt: {
-    fontSize: 15,
-    fontWeight: '900',
-    fontWeight: 'bold',
-    color: Colors.backgroundcolor,
-    right:'99%',
-    paddingRight:10,
-    top:'12%',
-  },
-  
   headingStyle: {
-    marginTop: 95,
-    marginBottom: 10,
+   // marginTop: 95,
+   // marginBottom: 10,
     fontSize: 15,
     fontWeight: '900',
     textAlign: 'center',
@@ -288,7 +278,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     color: Colors.backgroundcolor,
-    right: '85%',
+    right: '80%',
+    top:30
     // paddingLeft: -40,
     //paddingRight: 10,
   },
