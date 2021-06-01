@@ -155,7 +155,7 @@ const Sanitizationservices = ({route, navigation}) => {
                           {item.bhk}
                         </Text>
 
-                        <View style={{left: 99}}>
+                        <View style={{left: 90,top:5}}>
                           <Card style={styles.cardStyle}>
                             <TextInput
                               style={{
@@ -163,6 +163,8 @@ const Sanitizationservices = ({route, navigation}) => {
                                 fontWeight: 'bold',
                                 //top: 1,
                                 color: Colors.secondaryText,
+                                // alignSelf:'center'
+                                left:25
                               }}
                               keyboardType="numeric"
                               placeholder={item.value}></TextInput>
@@ -459,10 +461,10 @@ const styles = StyleSheet.create({
   cardStyle: {
     width: 100,
     height: 35,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // alignSelf: 'center',
+    left:0,
     flexDirection: 'column',
 
     borderRadius: 1,

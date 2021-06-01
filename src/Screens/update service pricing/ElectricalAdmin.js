@@ -16,7 +16,7 @@ const ElectricalAdmin = ({navigation}) => {
     <View style={{flex: 1, backgroundColor: Colors.backgroundcolor}}>
       <View style={styles.header}>
         <TouchableOpacity
-          style={{bottom:5, left: 20}}
+          style={{bottom: 5, left: 20}}
           onPress={() => navigation.goBack()}>
           <AntDesign
             style={styles.iconItem}
@@ -25,7 +25,7 @@ const ElectricalAdmin = ({navigation}) => {
             color={Colors.backgroundcolor}
           />
         </TouchableOpacity>
-        <View style={{width: 148, height: 47, paddingLeft: 90}}>
+        <View style={{width: 148, height: 47, paddingLeft: 80}}>
           <Image
             style={{
               flex: 1,
@@ -46,7 +46,11 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Switch & Socket'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {
+                head: 'Switch & Socket',
+              })
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/switch.png')}
@@ -57,7 +61,9 @@ const ElectricalAdmin = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Fan'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {head: 'Fan'})
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/fan.png')}
@@ -69,7 +75,9 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'light'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {head: 'light'})
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/light.png')}
@@ -80,7 +88,9 @@ const ElectricalAdmin = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Wiring'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {head: 'Wiring'})
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/wiring.png')}
@@ -92,7 +102,11 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer2}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Inverter & Stabilizer'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {
+                head: 'Inverter & Stabilizer',
+              })
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/inverter.png')}
@@ -103,7 +117,9 @@ const ElectricalAdmin = ({navigation}) => {
 
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'Room Heater'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {head: 'Room Heater'})
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/heater.png')}
@@ -115,7 +131,9 @@ const ElectricalAdmin = ({navigation}) => {
         <View style={styles.categorycontainer1}>
           <TouchableOpacity
             style={styles.categorybtn}
-            onPress={() => navigation.navigate('Sanitizationservices', {head: 'MCB & Fuse'})}>
+            onPress={() =>
+              navigation.navigate('Sanitizationservices', {head: 'MCB & Fuse'})
+            }>
             <View style={styles.categoryicon}>
               <Image
                 source={require('../../Assets/adm/fuse.png')}
@@ -143,10 +161,10 @@ const styles = StyleSheet.create({
   },
   categorycontainer1: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'flex-start',
     marginRight: 10,
-    marginLeft: 5,
+    marginLeft: 10,
     marginTop: 30,
   },
 
@@ -172,14 +190,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   categoryicon: {
-    flex: 2,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   categorybtn: {
     flex: 1,
     marginTop: 15,
-    marginLeft: 20,
+    marginLeft: 22,
     marginRight: 20,
   },
   //   headingStyle: {
@@ -228,7 +246,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   containers: {
-    flex: 4,
+    flex: 1,
 
     flexDirection: 'column',
   },
@@ -247,7 +265,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     fontWeight: 'bold',
     color: Colors.backgroundcolor,
-    paddingLeft: -7,
+    right:8,
     bottom: 30,
   },
   headingStyle: {
@@ -258,10 +276,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     fontWeight: 'bold',
-    alignSelf:'center',
+    alignSelf: 'center',
     color: Colors.backgroundcolor,
     right: '85%',
-   // paddingLeft: -40,
+    // paddingLeft: -40,
     //paddingRight: 10,
   },
 });
