@@ -161,10 +161,10 @@ const Sanitizationservices = ({route, navigation}) => {
                               style={{
                                 fontSize: 11,
                                 fontWeight: 'bold',
-                                //top: 1,
+                                top: 2,
                                 color: Colors.secondaryText,
                                 // alignSelf:'center'
-                                left:25
+                                left:10
                               }}
                               keyboardType="numeric"
                               placeholder={item.value}></TextInput>
@@ -197,9 +197,9 @@ const Sanitizationservices = ({route, navigation}) => {
                       <Text
                         style={{
                           color: Colors.backgroundcolor,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: 'bold',
-                          paddingLeft: 15,
+                          paddingLeft: 5,
                           alignItems: 'center',
                         }}>
                         UPDATE
@@ -217,7 +217,7 @@ const Sanitizationservices = ({route, navigation}) => {
                       borderRadius: 12,
                       bottom: 25,
                       padding: 10,
-                      left: 140,
+                      left: 150,
                     }}>
                     <TouchableOpacity
                       onPress={() => {
@@ -226,9 +226,9 @@ const Sanitizationservices = ({route, navigation}) => {
                       <Text
                         style={{
                           color: Colors.backgroundcolor,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: 'bold',
-                          paddingLeft: 20,
+                          paddingLeft: 18,
                         }}>
                         BACK
                       </Text>
@@ -268,6 +268,7 @@ const Sanitizationservices = ({route, navigation}) => {
                 color: Colors.secondaryText,
                 fontSize: 16,
                 paddingLeft: 20,
+                bottom:10
               }}>
               Are you sure you want to update?
             </Text>
@@ -278,7 +279,7 @@ const Sanitizationservices = ({route, navigation}) => {
                 height: 40,
                 backgroundColor: Colors.secondaryText,
                 borderRadius: 12,
-                top: 15,
+                top:1,
                 padding: 10,
                 left: 35,
               }}>
@@ -320,7 +321,7 @@ const Sanitizationservices = ({route, navigation}) => {
                 height: 40,
                 backgroundColor: Colors.secondaryText,
                 borderRadius: 12,
-                bottom: 25,
+                bottom:39,
                 padding: 10,
                 left: 150,
               }}>

@@ -108,7 +108,7 @@ const Servicepartners = ({route, navigation}) => {
             Service Partners List
           </Text>
           <TouchableOpacity
-            style={{paddingLeft: 110}}
+            style={{paddingLeft: 80}}
             onPress={() => {
               toggleModal();
             }}>
@@ -195,9 +195,9 @@ const Servicepartners = ({route, navigation}) => {
                       <Text
                         style={{
                           color: colors.backgroundcolor,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: 'bold',
-                          paddingLeft: 15,
+                          paddingLeft: 5,
                           alignItems: 'center',
                         }}>
                         UPDATE
@@ -215,7 +215,7 @@ const Servicepartners = ({route, navigation}) => {
                       borderRadius: 12,
                       bottom: 25,
                       padding: 10,
-                      left: 140,
+                      left: 150,
                     }}>
                     <TouchableOpacity
                       onPress={() => {
@@ -224,9 +224,9 @@ const Servicepartners = ({route, navigation}) => {
                       <Text
                         style={{
                           color: colors.backgroundcolor,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: 'bold',
-                          paddingLeft: 20,
+                          paddingLeft: 18,
                         }}>
                         BACK
                       </Text>
@@ -253,6 +253,7 @@ const Servicepartners = ({route, navigation}) => {
               width: 270,
               height: 160,
               borderRadius: 12,
+              
             }}>
             <Text
               style={{
@@ -268,6 +269,7 @@ const Servicepartners = ({route, navigation}) => {
                 color: colors.secondaryText,
                 fontSize: 16,
                 paddingLeft: 20,
+                bottom:10
               }}>
               Are you sure you want to update?
             </Text>
@@ -278,7 +280,7 @@ const Servicepartners = ({route, navigation}) => {
                 height: 40,
                 backgroundColor: colors.secondaryText,
                 borderRadius: 12,
-                top: 15,
+                top: 1,
                 padding: 10,
                 left: 35,
               }}>
@@ -320,7 +322,7 @@ const Servicepartners = ({route, navigation}) => {
                 height: 40,
                 backgroundColor: colors.secondaryText,
                 borderRadius: 12,
-                bottom: 25,
+                bottom: 39,
                 padding: 10,
                 left: 150,
               }}>

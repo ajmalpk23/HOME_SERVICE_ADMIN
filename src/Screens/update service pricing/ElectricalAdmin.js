@@ -40,7 +40,7 @@ const ElectricalAdmin = ({navigation}) => {
         </View>
         <Text style={styles.text}>HOME SERVE</Text>
 
-        <Text style={styles.headingStyle}>Electrical Work</Text>
+        <Text style={styles.textt}>Electrical Work</Text>
       </View>
       <ScrollView>
         <View style={styles.categorycontainer}>
@@ -200,16 +200,16 @@ const styles = StyleSheet.create({
     marginLeft: 22,
     marginRight: 20,
   },
-  //   headingStyle: {
-  //     marginTop: 10,
-  //     marginBottom: 10,
-  //     fontSize: 16,
+   //headingStyle: {
+    //   marginTop: 10,
+   //    marginBottom: 10,
+   //    fontSize: 16,
   //     fontWeight: '900',
-  //     textAlign: 'center',
+   //    textAlign: 'center',
   //     alignItems: 'center',
-  //     fontWeight: 'bold',
-  //     color: Colors.text,
-  //   },
+ //      fontWeight: 'bold',
+//   color: Colors.text,
+ //    },
 
   //   text: {
   //     fontSize: 20,
@@ -268,6 +268,16 @@ const styles = StyleSheet.create({
     right:8,
     bottom: 30,
   },
+  textt: {
+    fontSize: 15,
+    fontWeight: '900',
+    fontWeight: 'bold',
+    color: Colors.backgroundcolor,
+    right:'99%',
+    paddingRight:10,
+    top:'12%',
+  },
+  
   headingStyle: {
     marginTop: 95,
     marginBottom: 10,
